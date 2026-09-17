@@ -1,0 +1,15 @@
+:root {
+  --green-950: #063d26;
+  --green-900: #075f36;
+  --green-700: #168447;
+  --yellow: #ffe600;
+  --white: #ffffff;
+  --paper: #f8faf5;
+  --text: #24382c;
+  --muted: #526459;
+  --line: #d6dfd6;
+  --font-display: 'Manrope', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --gutter: clamp(1.25rem, 4.3vw, 5.5rem);
+  --header-height: 100px;
+}

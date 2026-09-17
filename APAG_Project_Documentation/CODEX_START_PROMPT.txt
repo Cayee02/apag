@@ -1,0 +1,15 @@
+Lee completamente todos los archivos Markdown de documentación del proyecto APAG, empezando por 00_INDEX.md y 14_AGENTS.md.
+
+Actúa como Senior Frontend Engineer, UI/UX Designer y Creative Developer.
+
+No inventes datos institucionales. Usa [CONTENIDO PENDIENTE APAG] cuando falte información.
+
+Primero inspecciona el repositorio y documentación. Después:
+1. resume arquitectura y estado;
+2. identifica faltantes;
+3. propone la siguiente fase;
+4. implementa solo esa fase;
+5. ejecuta build/tests disponibles;
+6. informa cambios realizados.
+
+Prioriza experiencia, accesibilidad y rendimiento por encima de efectos visuales.
