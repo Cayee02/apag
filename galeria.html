@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es-PY">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería | APAG</title>
+  <meta name="description" content="Explora los álbumes de fotografías de APAG y abre cada imagen para verla en detalle.">
+  <meta name="theme-color" content="#063d26">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="./images/optimized/apag-icon.png">
+</head>
+<body data-page="galeria">
+  %APAG_HEADER%
+  <main id="contenido" class="inner-page gallery-page" tabindex="-1">
+    <div class="inner-heading container">
+      <p class="breadcrumb"><a href="./index.html">Inicio</a> / Galería</p>
+      <h1>Galería</h1>
+      <p>Un espacio para compartir nuestras fotografías. Elige un álbum y abre sus imágenes para verlas en detalle.</p>
+    </div>
+    <section class="album-section section-space" aria-labelledby="albums-title">
+      <div class="container">
+        <div class="section-heading"><h2 id="albums-title">Álbumes de fotos</h2></div>
+        <div class="album-list" data-cms-albums="all">%APAG_ALBUMS%</div>
+      </div>
+    </section>
+  </main>
+  <dialog class="photo-viewer" data-photo-viewer aria-labelledby="photo-viewer-title" data-lenis-prevent>
+    <div class="photo-viewer-toolbar"><h2 id="photo-viewer-title">Fotografía</h2><button type="button" data-photo-close aria-label="Cerrar fotografía">Cerrar <span aria-hidden="true">×</span></button></div>
+    <div class="photo-viewer-stage"><img data-photo-full alt=""><p data-photo-error hidden>No pudimos cargar la fotografía. <a data-photo-original>Abre la imagen directamente</a>.</p></div>
+    <div class="photo-viewer-bottom"><button type="button" data-photo-prev aria-label="Fotografía anterior">←</button><p data-photo-caption role="status" aria-live="polite"></p><button type="button" data-photo-next aria-label="Fotografía siguiente">→</button></div>
+  </dialog>
+  %APAG_FOOTER%
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+</html>

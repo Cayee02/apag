@@ -1,3 +1,11 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
+@media (prefers-reduced-motion: no-preference) {
+  .mobile-menu[open] nav a { animation: apag-menu-link .4s cubic-bezier(.16, 1, .3, 1) both; }
+  .mobile-menu[open] nav a:nth-child(2) { animation-delay: .045s; }
+  .mobile-menu[open] nav a:nth-child(3) { animation-delay: .09s; }
+  .mobile-menu[open] nav a:nth-child(4) { animation-delay: .135s; }
+  .mobile-menu[open] nav a:nth-child(5) { animation-delay: .18s; }
+}
+@keyframes apag-menu-link { from { opacity: .7; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

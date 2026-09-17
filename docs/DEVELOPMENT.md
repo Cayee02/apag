@@ -32,10 +32,10 @@ El frontend se abre en la dirección que indique Vite, normalmente http://127.0.
 - Contenido oficial de servicios, presentación, historia, misión, visión y valores.
 - Fotografías oficiales y aprobación del copy conceptual.
 - Completar las secciones de servicios y galería con contenido oficial, y aprobar las páginas internas.
-- Definir CMS: la autoadministración es un requisito contractual y todavía no está implementada.
+- Activar la cuenta real del panel PHP, comprobarlo visualmente y completar capacitación/despliegue. El gestor ya está elegido e implementado; ver [ADMIN.md](ADMIN.md).
 - Confirmar WhatsApp principal, redes y ubicación precisa del mapa.
-- Backend de formulario, antispam y política de privacidad.
-- Dominio definitivo para canonical, Open Graph absoluto, sitemap y schema.
+- Activar el formulario implementado con SMTP del hosting y política aprobada. Validación/antispam y pruebas locales están implementados; ver [CONTACT_FORM.md](CONTACT_FORM.md).
+- Dominio definitivo para activar canonical, Open Graph absoluto y sitemap; su generación está implementada. Ver [SEO.md](SEO.md).
 - QA visual, interacción real del menú, responsive y mediciones Lighthouse en navegador. El navegador integrado no estuvo disponible en esta sesión.
 
 No se considera una entrega de producción ni el cumplimiento total del alcance contratado.
@@ -54,3 +54,65 @@ Resultados de las comprobaciones y límites de la revisión: [VERIFICATION.md](V
 - Comprobaciones de anclajes, IDs duplicados y referencias ARIA agregadas a `npm.cmd run check`.
 
 La composición está implementada en CSS para escritorio y móvil; la validación visual sigue pendiente por falta de navegador integrado. Galería y servicios todavía necesitan material aprobado para considerarse terminados.
+
+## Preloader agrícola
+Pedido del usuario: una apertura agrícola en las páginas. Se incorpora un SVG animado de semilla, sol, surcos y brote, con salida breve de 1.35 segundos en las cuatro entradas. No requiere imágenes ni dependencias adicionales.
+
+La apertura arranca con estilos y script críticos en el head; se cierra independientemente del bundle. El Hero espera la finalización. El teclado y un toque permiten omitirla; prefers-reduced-motion la desactiva. Sin JavaScript, la página sigue accesible. La restauración del historial no conserva el overlay.
+
+`npm.cmd run check` incluye pruebas de la salida por tiempo, teclado, pagehide, cambio de preferencia, módulo tardío y limpieza en HMR. Son pruebas funcionales simuladas, no capturas ni validación visual en navegador.
+
+## Integración de fotografías suministradas — entrega anterior
+- `campo2` pasa a ser la primera imagen del Hero, acompañada de `campo3` y el paisaje de referencia existente.
+- Carrusel con transición de .85s, cambio cada 6 segundos, selección manual y botón de reproducción/pausa. Solo se activa después del preloader.
+- Pausa temporal por foco, hover y pestaña oculta. La selección manual detiene el autoplay y conserva la imagen elegida.
+- Con movimiento reducido no hay autoplay; los botones siguen permitiendo cambiar imágenes sin transición. Flechas, Home y End permiten selección por teclado.
+- Galería fotográfica asimétrica en Inicio: foto principal alta y dos secundarias; lista vertical en móvil.
+- Imágenes contextuales en Servicios y Sobre nosotros, con captions de material proporcionado.
+- Variantes WebP responsive de 480/960/1440 px y logos ligeros. Originales conservados. Para nuevas versiones de esas fotos ejecutar `npm.cmd run images:optimize` antes del build.
+- Las imágenes no acreditan ubicaciones ni actividades oficiales; se conserva la distinción con el contenido institucional pendiente.
+
+En esta entrega anterior se ejecutaron pruebas funcionales simuladas del carrusel. El carrusel y sus pruebas se retiraron en la revisión siguiente; la galería se conserva. La revisión visual de la web continúa pendiente por navegador integrado no disponible.
+
+## Revisión actual — portada original, motion y SEO
+
+- Restituido el atardecer original como única imagen de portada, con su composición y caption anteriores. Eliminados el carrusel, controles, módulo y pruebas asociados.
+- Conservadas la galería aprobada y las fotografías de páginas internas.
+- Curvas de cultivo inline con trazado ligado al scroll, respuesta moderada de los CTA al ratón y entrada escalonada de enlaces del menú. Soporte de movimiento reducido y limpieza de las mejoras GSAP.
+- Metadatos sociales y JSON-LD Organization con datos documentados. Canonical, imágenes absolutas, WebSite y sitemap se generan cuando se configura el dominio; no se inventa una URL pública.
+- Borrador no indexable por defecto, con activación explícita en el build. La página 404 nunca es indexable y tiene un enlace de retorno. Su asignación a errores HTTP reales depende del hosting.
+- Checks ampliados a cinco páginas, portada única, metadatos y generación SEO. Build y checks aprobados.
+
+Estado por fase y siguientes tareas: [ROADMAP_STATUS.md](ROADMAP_STATUS.md). La consulta sobre el gestor fue resuelta en la siguiente entrega.
+
+## Panel PHP — elección confirmada e implementación
+
+El usuario seleccionó un panel ligero PHP. Implementación nativa PHP 8.2+, sin base de datos: `server/` contiene almacenamiento, acceso, render, imágenes y vistas; `storage/` es privado, persistente e ignorado por Git.
+
+Textos principales de Inicio/internas, contenido institucional pendiente, listado de servicios, contacto y seis fotos se editan desde `/admin`. Cambios renderizados en servidor sobre el frontend compilado, disponibles al guardar sin rebuild. La portada conserva una sola imagen y la galería conserva su layout. Servicios no cargados mantienen el placeholder; no se inventa información.
+
+`npm.cmd run admin:create` activa la cuenta desde una terminal sin mostrar la contraseña. `npm.cmd run dev:php` compila y sirve web/panel en http://127.0.0.1:8080/. Vite en 5173 sigue siendo el entorno de diseño; no ejecuta el CMS. `npm.cmd run build:php` genera un paquete con `public/` y `app/` separados; no copia la cuenta ni datos locales.
+
+Acceso con sesiones y CSRF, cambio de contraseña, límite de intentos, validación de formularios, escape de contenido, control de revisiones, backup del guardado anterior e imágenes validadas/reencodificadas a WebP. La cuenta única administra contenido del sitio; no hay registro público ni portal de socios.
+
+Las pruebas de `npm.cmd run check:php` ejecutan validaciones PHP y recorridos HTTP reales con datos/cuentas temporales. Guía y límites en [ADMIN.md](ADMIN.md). No se creó una cuenta con credenciales predeterminadas ni se desplegó el paquete.
+
+## Formulario de contacto — PHP y SMTP del hosting
+
+Formulario integrado en Contacto, con campos definidos por la documentación, validación JS/PHP, errores por campo, foco, estado de envío y éxito/error. Funciona sin JS mediante POST y redirección; consultas fallidas conservan los valores escapados en la respuesta, sin almacenar el texto en el CMS.
+
+PHPMailer 7.1.1 instalado por Composer y fijado en lock. SMTP cifrado/autenticado del hosting, remitente autorizado, Reply-To del visitante y correo de texto plano. Configuración privada por archivo local ignorado/excluido del paquete o entorno PHP. No se usó mail() ni un éxito simulado.
+
+Sesión pública separada, CSRF, token de envío, mínimo de tiempo, honeypot, intervalo y límite por IP como HMAC. Los reintentos de un token confirmado no vuelven a invocar SMTP. Diagnósticos privados/credenciales no llegan al visitante.
+
+Privacidad editable con estado de publicación en el panel. Borradores no publicados quedan privados; el placeholder no se puede aprobar. La aceptación queda vinculada a la versión del texto. Campos nuevos se incorporan a datos guardados anteriores sin perderlos.
+
+El usuario confirmó correo del hosting y política pendiente. Por eso el envío real permanece sin habilitar. Las pruebas `check:contact` envían a un SMTP loopback aislado y cubren HTML sin JS, validación, antispam, duplicados, cambio de política y fallos. No se contactó al correo real de APAG. Guía y límites: [CONTACT_FORM.md](CONTACT_FORM.md).
+
+## Contenido institucional y material del cliente
+
+Propuesta recibida cargada en `src/data/institutional.json`, schema/CMS y páginas compiladas: hero de tres líneas, presentación, seis pilares, orgánica/capacitación, ocho servicios, estándares, comercio justo, comercialización, instituciones y financiamiento. Misión y visión pendientes, con rótulos y aprobación independiente desde Sobre APAG en el panel. No se agregan fechas, cifras ni vigencia de certificados.
+
+Cuatro fotos del cliente mejoradas con ayuda de ChatGPT según el usuario: álbum de maquinaria, imagen de grupo en Sobre APAG, carga de caña en Inicio y cosecha en Servicios. Optimización Sharp sin alterar PNG, srcset con dimensiones reales. La portada original y la composición editorial permanecen. Carga local con backup conserva datos de contacto, privacidad y álbumes previos; los nuevos valores iniciales hacen que el paquete público también muestre el texto recibido.
+
+Build, checks frontend/PHP/formulario y publicación HTTP aprobados. Cuenta real, aprobación final de contenido/misión/visión, política, SMTP del hosting y QA visual/producción siguen pendientes.

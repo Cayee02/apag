@@ -1,0 +1,204 @@
+[
+  {
+    "source": "public/images/hero/campo.jpg",
+    "width": 1920,
+    "height": 1080,
+    "originalBytes": 395003,
+    "variants": [
+      {
+        "file": "campo-480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 18604
+      },
+      {
+        "file": "campo-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 67026
+      },
+      {
+        "file": "campo-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 133444
+      }
+    ]
+  },
+  {
+    "source": "public/images/hero/campo2.png",
+    "width": 1672,
+    "height": 941,
+    "originalBytes": 3551848,
+    "variants": [
+      {
+        "file": "campo2-480.webp",
+        "width": 480,
+        "height": 270,
+        "bytes": 54238
+      },
+      {
+        "file": "campo2-960.webp",
+        "width": 960,
+        "height": 540,
+        "bytes": 211888
+      },
+      {
+        "file": "campo2-1440.webp",
+        "width": 1440,
+        "height": 810,
+        "bytes": 436220
+      }
+    ]
+  },
+  {
+    "source": "public/images/hero/campo3.png",
+    "width": 1448,
+    "height": 1086,
+    "originalBytes": 3533550,
+    "variants": [
+      {
+        "file": "campo3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 73698
+      },
+      {
+        "file": "campo3-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 275140
+      },
+      {
+        "file": "campo3-1440.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 530524
+      }
+    ]
+  },
+  {
+    "source": "public/images/hero/Maquinaria.png",
+    "width": 1254,
+    "height": 1254,
+    "originalBytes": 2777550,
+    "variants": [
+      {
+        "file": "maquinaria1-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 71588
+      },
+      {
+        "file": "maquinaria1-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 217514
+      },
+      {
+        "file": "maquinaria1-1440.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 320090
+      }
+    ]
+  },
+  {
+    "source": "public/images/hero/Maquinaria2.png",
+    "width": 1254,
+    "height": 1254,
+    "originalBytes": 3091719,
+    "variants": [
+      {
+        "file": "maquinaria2-480.webp",
+        "width": 480,
+        "height": 480,
+        "bytes": 82854
+      },
+      {
+        "file": "maquinaria2-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 289492
+      },
+      {
+        "file": "maquinaria2-1440.webp",
+        "width": 1254,
+        "height": 1254,
+        "bytes": 434698
+      }
+    ]
+  },
+  {
+    "source": "public/images/hero/Maquinaria3.png",
+    "width": 1448,
+    "height": 1086,
+    "originalBytes": 3182943,
+    "variants": [
+      {
+        "file": "maquinaria3-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 65272
+      },
+      {
+        "file": "maquinaria3-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 230224
+      },
+      {
+        "file": "maquinaria3-1440.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 430544
+      }
+    ]
+  },
+  {
+    "source": "public/images/hero/Maquinaria4.png",
+    "width": 1448,
+    "height": 1086,
+    "originalBytes": 3324657,
+    "variants": [
+      {
+        "file": "maquinaria4-480.webp",
+        "width": 480,
+        "height": 360,
+        "bytes": 62956
+      },
+      {
+        "file": "maquinaria4-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 247322
+      },
+      {
+        "file": "maquinaria4-1440.webp",
+        "width": 1440,
+        "height": 1080,
+        "bytes": 488344
+      }
+    ]
+  },
+  {
+    "source": "public/images/logo/apag.png",
+    "width": 1046,
+    "height": 1008,
+    "originalBytes": 1181080,
+    "variants": [
+      {
+        "file": "apag-132.webp",
+        "width": 132,
+        "height": 127,
+        "bytes": 9658
+      },
+      {
+        "file": "apag-264.webp",
+        "width": 264,
+        "height": 254,
+        "bytes": 22858
+      }
+    ]
+  }
+]

@@ -1,0 +1,608 @@
+{
+  "fields": {
+    "home.title": {
+      "group": "home",
+      "label": "Título de portada (tres líneas)",
+      "value": "Cultivamos producción.\nFortalecemos productores.\nConstruimos futuro.",
+      "max": 90,
+      "kind": "hero",
+      "lines": 3
+    },
+    "home.description": {
+      "group": "home",
+      "label": "Descripción de portada",
+      "value": "En APAG trabajamos junto a productores asociados para fortalecer una producción agrícola organizada, responsable y sostenible, impulsando especialmente el desarrollo de la caña de azúcar orgánica, el cumplimiento de normas de producción, el acceso a mercados y nuevas oportunidades para nuestros socios.",
+      "max": 600
+    },
+    "home.intro_title": {
+      "group": "home",
+      "label": "Título de presentación",
+      "value": "Una organización que crece junto a sus productores",
+      "max": 150
+    },
+    "home.intro": {
+      "group": "home",
+      "label": "Presentación",
+      "value": "La Asociación de Productores Agrícolas del Guairá — APAG reúne a productores que trabajan de manera organizada para mejorar sus capacidades productivas, fortalecer la producción de caña de azúcar orgánica y generar mejores oportunidades de comercialización.\n\nNuestro trabajo busca acompañar al productor en diferentes etapas de su actividad: desde la preparación del suelo y la capacitación técnica hasta el cumplimiento de normas de producción orgánica, procesos relacionados con certificaciones, comercio justo y comercialización conjunta.\n\nCreemos que la cooperación entre productores permite enfrentar desafíos de manera más eficiente, acceder a mejores oportunidades y avanzar hacia una producción cada vez más responsable, competitiva y sostenible.",
+      "max": 1500,
+      "kind": "paragraphs"
+    },
+    "home.manifesto": {
+      "group": "home",
+      "label": "Título del manifiesto (dos líneas)",
+      "value": "Juntos cultivamos\noportunidades.",
+      "max": 150,
+      "kind": "manifesto"
+    },
+    "home.manifesto_description": {
+      "group": "home",
+      "label": "Descripción del manifiesto",
+      "value": "No se trata solamente de producir más. Se trata de producir mejor, organizadamente y con responsabilidad.",
+      "max": 500
+    },
+    "home.photo_caption": {
+      "group": "home",
+      "label": "Leyenda principal de portada",
+      "value": "La tierra nos conecta.",
+      "max": 100
+    },
+    "home.photo_credit": {
+      "group": "home",
+      "label": "Procedencia de la foto de portada",
+      "value": "Imagen de referencia · Unsplash",
+      "max": 150
+    },
+    "gallery.one_title": {
+      "group": "gallery",
+      "label": "Primera foto: título",
+      "value": "El trabajo de producir.",
+      "max": 100
+    },
+    "gallery.one_detail": {
+      "group": "gallery",
+      "label": "Primera foto: detalle / procedencia",
+      "value": "Cosecha entre cultivos",
+      "max": 150
+    },
+    "gallery.two_title": {
+      "group": "gallery",
+      "label": "Segunda foto: título",
+      "value": "Todo empieza en la tierra.",
+      "max": 100
+    },
+    "gallery.two_detail": {
+      "group": "gallery",
+      "label": "Segunda foto: detalle / procedencia",
+      "value": "Preparación del suelo",
+      "max": 150
+    },
+    "gallery.three_title": {
+      "group": "gallery",
+      "label": "Tercera foto: título",
+      "value": "Una mirada al horizonte.",
+      "max": 100
+    },
+    "gallery.three_detail": {
+      "group": "gallery",
+      "label": "Tercera foto: detalle / procedencia",
+      "value": "Campo al atardecer · Unsplash",
+      "max": 150
+    },
+    "services.heading": {
+      "group": "services",
+      "label": "Título de página",
+      "value": "Servicios",
+      "max": 100
+    },
+    "services.intro": {
+      "group": "services",
+      "label": "Introducción",
+      "value": "APAG acompaña a sus socios mediante acciones orientadas al fortalecimiento productivo, la capacitación, la organización y la comercialización.",
+      "max": 500
+    },
+    "services.photo_credit": {
+      "group": "services",
+      "label": "Leyenda de la foto",
+      "value": "Maquinaria para la producción · Imagen del cliente",
+      "max": 200
+    },
+    "about.heading": {
+      "group": "about",
+      "label": "Título de página",
+      "value": "Sobre nosotros",
+      "max": 100
+    },
+    "about.presentation": {
+      "group": "about",
+      "label": "Presentación institucional",
+      "value": "La Asociación de Productores Agrícolas del Guairá — APAG reúne a productores que trabajan de manera organizada para mejorar sus capacidades productivas, fortalecer la producción de caña de azúcar orgánica y generar mejores oportunidades de comercialización.\n\nNuestro trabajo busca acompañar al productor en diferentes etapas de su actividad: desde la preparación del suelo y la capacitación técnica hasta el cumplimiento de normas de producción orgánica, procesos relacionados con certificaciones, comercio justo y comercialización conjunta.\n\nCreemos que la cooperación entre productores permite enfrentar desafíos de manera más eficiente, acceder a mejores oportunidades y avanzar hacia una producción cada vez más responsable, competitiva y sostenible.",
+      "max": 5000,
+      "kind": "paragraphs"
+    },
+    "about.history": {
+      "group": "about",
+      "label": "Propósito y organización",
+      "value": "APAG nace del trabajo conjunto de productores que entienden que la organización es una herramienta fundamental para crecer.\n\nLa asociación permite compartir conocimientos, organizar la producción, acceder a capacitaciones, trabajar bajo normas comunes y desarrollar estrategias de comercialización conjunta.\n\nNuestro propósito es continuar creando condiciones que permitan a los productores desarrollarse, mejorar sus procesos y participar de nuevas oportunidades dentro del sector agrícola.",
+      "max": 8000,
+      "kind": "paragraphs"
+    },
+    "about.mission": {
+      "group": "about",
+      "label": "Misión propuesta",
+      "value": "Fortalecer a nuestros productores asociados mediante organización, capacitación, acompañamiento técnico, producción responsable y comercialización conjunta, promoviendo oportunidades que contribuyan al desarrollo sostenible de sus actividades agrícolas.",
+      "max": 3000
+    },
+    "about.vision": {
+      "group": "about",
+      "label": "Visión propuesta",
+      "value": "Ser una organización referente por la capacidad de sus productores para trabajar de manera organizada, responsable y sostenible, fortaleciendo la producción agrícola y generando nuevas oportunidades de desarrollo para sus asociados.",
+      "max": 3000
+    },
+    "about.values": {
+      "group": "about",
+      "label": "Valores",
+      "value": "Producción · Conocimiento · Organización · Comercialización · Sostenibilidad · Desarrollo.",
+      "max": 4000
+    },
+    "about.objectives": {
+      "group": "about",
+      "label": "Objetivos",
+      "value": "Continuar creando condiciones que permitan a los productores desarrollarse, mejorar sus procesos y participar de nuevas oportunidades dentro del sector agrícola.",
+      "max": 4000
+    },
+    "about.photo_credit": {
+      "group": "about",
+      "label": "Leyenda de la foto",
+      "value": "Encuentro junto a la maquinaria · Imagen del cliente",
+      "max": 200
+    },
+    "contact.heading": {
+      "group": "contact",
+      "label": "Título de página",
+      "value": "Conversemos.",
+      "max": 100
+    },
+    "contact.intro": {
+      "group": "contact",
+      "label": "Introducción",
+      "value": "Ponte en contacto con la Asociación de Productores Agrícolas del Guairá.",
+      "max": 500
+    },
+    "contact.email": {
+      "group": "contact",
+      "label": "Correo institucional",
+      "value": "asociacion.prod.agric.guaira@gmail.com",
+      "max": 200,
+      "kind": "email"
+    },
+    "contact.address": {
+      "group": "contact",
+      "label": "Dirección",
+      "value": "Juan E. O'Leary casi Carlos Antonio López",
+      "max": 500
+    },
+    "contact.primary_label": {
+      "group": "contact",
+      "label": "Teléfono principal: texto visible",
+      "value": "0989 148 592",
+      "max": 50
+    },
+    "contact.primary_number": {
+      "group": "contact",
+      "label": "Teléfono principal: número internacional",
+      "value": "+595989148592",
+      "max": 16,
+      "kind": "phone"
+    },
+    "contact.secondary_label": {
+      "group": "contact",
+      "label": "Teléfono alternativo: texto visible",
+      "value": "0986 156 489",
+      "max": 50
+    },
+    "contact.secondary_number": {
+      "group": "contact",
+      "label": "Teléfono alternativo: número internacional",
+      "value": "+595986156489",
+      "max": 16,
+      "kind": "phone"
+    },
+    "footer.statement": {
+      "group": "contact",
+      "label": "Texto del pie de página",
+      "value": "Agricultura, territorio y comunidad.",
+      "max": 200
+    },
+    "privacy.title": {
+      "group": "privacy",
+      "label": "Título de la política",
+      "value": "Política de privacidad",
+      "max": 150
+    },
+    "privacy.body": {
+      "group": "privacy",
+      "label": "Texto de privacidad aprobado por APAG",
+      "value": "[CONTENIDO PENDIENTE APAG]",
+      "max": 12000
+    },
+    "home.pillars_heading": {
+      "group": "home",
+      "label": "Título de los pilares",
+      "max": 180,
+      "value": "Nuestros pilares"
+    },
+    "home.pillars_intro": {
+      "group": "home",
+      "label": "Introducción de los pilares",
+      "max": 5000,
+      "value": "Producción, conocimiento y organización para generar oportunidades colectivas."
+    },
+    "home.pillar_1_title": {
+      "group": "home",
+      "label": "Pilar 1: título",
+      "max": 180,
+      "value": "Producción"
+    },
+    "home.pillar_1_body": {
+      "group": "home",
+      "label": "Pilar 1: descripción",
+      "max": 5000,
+      "value": "Fortalecemos las capacidades de nuestros productores para desarrollar una actividad agrícola organizada y sostenible."
+    },
+    "home.pillar_2_title": {
+      "group": "home",
+      "label": "Pilar 2: título",
+      "max": 180,
+      "value": "Conocimiento"
+    },
+    "home.pillar_2_body": {
+      "group": "home",
+      "label": "Pilar 2: descripción",
+      "max": 5000,
+      "value": "Promovemos capacitaciones que permitan incorporar mejores prácticas y comprender los requisitos de la producción orgánica."
+    },
+    "home.pillar_3_title": {
+      "group": "home",
+      "label": "Pilar 3: título",
+      "max": 180,
+      "value": "Organización"
+    },
+    "home.pillar_3_body": {
+      "group": "home",
+      "label": "Pilar 3: descripción",
+      "max": 5000,
+      "value": "Trabajamos como asociación para transformar esfuerzos individuales en oportunidades colectivas."
+    },
+    "home.pillar_4_title": {
+      "group": "home",
+      "label": "Pilar 4: título",
+      "max": 180,
+      "value": "Comercialización"
+    },
+    "home.pillar_4_body": {
+      "group": "home",
+      "label": "Pilar 4: descripción",
+      "max": 5000,
+      "value": "Coordinamos la producción y venta conjunta de nuestros asociados para fortalecer su participación en el mercado."
+    },
+    "home.pillar_5_title": {
+      "group": "home",
+      "label": "Pilar 5: título",
+      "max": 180,
+      "value": "Sostenibilidad"
+    },
+    "home.pillar_5_body": {
+      "group": "home",
+      "label": "Pilar 5: descripción",
+      "max": 5000,
+      "value": "Promovemos procesos productivos responsables y alineados con estándares de producción orgánica."
+    },
+    "home.pillar_6_title": {
+      "group": "home",
+      "label": "Pilar 6: título",
+      "max": 180,
+      "value": "Desarrollo"
+    },
+    "home.pillar_6_body": {
+      "group": "home",
+      "label": "Pilar 6: descripción",
+      "max": 5000,
+      "value": "Buscamos alianzas, proyectos y mecanismos financieros que permitan mejorar las condiciones de producción de nuestros socios."
+    },
+    "home.organic_heading": {
+      "group": "home",
+      "label": "Producción orgánica: título",
+      "max": 180,
+      "value": "Producir responsablemente también significa prepararnos para el futuro"
+    },
+    "home.organic_body": {
+      "group": "home",
+      "label": "Producción orgánica: texto",
+      "max": 5000,
+      "value": "Uno de los principales ejes de trabajo de APAG es el fortalecimiento de la producción de caña de azúcar orgánica.\n\nLa organización acompaña a sus productores mediante capacitación y orientación sobre los procedimientos y normas necesarias para desarrollar una producción alineada con los requerimientos de los diferentes programas y mercados.\n\nEsto permite trabajar de manera organizada, mejorar los procesos dentro de las fincas y preparar a los productores para responder a estándares cada vez más exigentes.",
+      "kind": "paragraphs"
+    },
+    "home.training_heading": {
+      "group": "home",
+      "label": "Capacitación: título",
+      "max": 180,
+      "value": "El conocimiento también forma parte de nuestra producción"
+    },
+    "home.training_body": {
+      "group": "home",
+      "label": "Capacitación: texto",
+      "max": 5000,
+      "value": "En APAG entendemos que una producción sostenible requiere productores preparados.\n\nPor eso impulsamos capacitaciones dirigidas a nuestros socios sobre aspectos relacionados con la producción de caña orgánica, las normas aplicables, buenas prácticas agrícolas y los requerimientos necesarios para mantener una producción organizada.\n\nLas capacitaciones permiten que cada productor comprenda mejor los procesos que forman parte de su actividad y pueda aplicar ese conocimiento directamente en su finca.",
+      "kind": "paragraphs"
+    },
+    "home.cta_heading": {
+      "group": "home",
+      "label": "Cierre de Inicio: título",
+      "max": 180,
+      "value": "El futuro del campo se construye trabajando juntos."
+    },
+    "home.cta_body": {
+      "group": "home",
+      "label": "Cierre de Inicio: texto",
+      "max": 5000,
+      "value": "En APAG creemos en productores capacitados, organizados y preparados para afrontar nuevos desafíos."
+    },
+    "services.standards_heading": {
+      "group": "services",
+      "label": "Certificaciones y estándares: título",
+      "max": 180,
+      "value": "Producción preparada para mercados exigentes"
+    },
+    "services.standards_body": {
+      "group": "services",
+      "label": "Certificaciones y estándares: texto",
+      "max": 5000,
+      "value": "APAG trabaja con procesos relacionados con normas y esquemas de producción orgánica, comercio justo y certificación.\n\nEntre las referencias mencionadas por la organización se encuentran: CERES Fair Trade · Bio Suisse · Naturland · Unión Europea (EU Organic) · NOP · FLOCERT.\n\nEl cumplimiento de estos estándares permite fortalecer los procesos internos de la organización, mejorar la trazabilidad y preparar la producción de los asociados para diferentes mercados.",
+      "kind": "paragraphs"
+    },
+    "services.fair_heading": {
+      "group": "services",
+      "label": "Comercio justo: título",
+      "max": 180,
+      "value": "Una producción que también busca generar oportunidades"
+    },
+    "services.fair_body": {
+      "group": "services",
+      "label": "Comercio justo: texto",
+      "max": 5000,
+      "value": "El comercio justo representa otro de los componentes importantes del trabajo de APAG.\n\nA través de la organización colectiva y el cumplimiento de los requisitos correspondientes, buscamos que los productores puedan participar de modelos de comercialización que valoren su trabajo y contribuyan al fortalecimiento de sus comunidades.\n\nLa organización permite que pequeños y medianos productores puedan trabajar de manera conjunta y acceder a oportunidades que individualmente serían más difíciles de alcanzar.",
+      "kind": "paragraphs"
+    },
+    "services.marketing_heading": {
+      "group": "services",
+      "label": "Comercialización conjunta: título",
+      "max": 180,
+      "value": "Juntos tenemos mayor capacidad de negociación"
+    },
+    "services.marketing_body": {
+      "group": "services",
+      "label": "Comercialización conjunta: texto",
+      "max": 5000,
+      "value": "APAG coordina la venta conjunta de la producción de sus asociados.\n\nEste modelo permite organizar volúmenes de producción, coordinar entregas y fortalecer la posición de los productores frente a los compradores.\n\nActualmente, los productores asociados trabajan en operaciones de comercialización vinculadas con Hibernia Misiones y AZPA.\n\nEsta cooperación permite convertir el esfuerzo individual de cada productor en una producción organizada colectivamente.",
+      "kind": "paragraphs"
+    },
+    "services.alliances_heading": {
+      "group": "services",
+      "label": "Trabajo interinstitucional: título",
+      "max": 180,
+      "value": "Construimos alianzas para fortalecer al productor"
+    },
+    "services.alliances_body": {
+      "group": "services",
+      "label": "Trabajo interinstitucional: texto",
+      "max": 5000,
+      "value": "El crecimiento del sector agrícola requiere cooperación.\n\nPor eso APAG trabaja de manera articulada con instituciones que pueden aportar conocimientos, asistencia y herramientas para mejorar la producción.\n\nDentro de estas acciones, la asociación mantiene trabajo conjunto con la Dirección de Extensión Agraria (DEAg), a través del CDA Guairá.\n\nEsta articulación permite acercar conocimientos técnicos y oportunidades a los productores asociados.",
+      "kind": "paragraphs"
+    },
+    "services.finance_heading": {
+      "group": "services",
+      "label": "Proyectos y financiamiento: título",
+      "max": 180,
+      "value": "Buscando nuevas herramientas para seguir creciendo"
+    },
+    "services.finance_body": {
+      "group": "services",
+      "label": "Proyectos y financiamiento: texto",
+      "max": 5000,
+      "value": "APAG también trabaja en la búsqueda de mecanismos y estrategias que permitan mejorar las condiciones productivas de sus asociados.\n\nEntre los objetivos se encuentra fortalecer la articulación con el Crédito Agrícola de Habilitación, buscando oportunidades que permitan a productores acceder a proyectos relacionados con mejoras de producción, fortalecimiento de las fincas, incorporación de herramientas, desarrollo de nuevos proyectos y disponibilidad de capital operativo.\n\nLa finalidad es generar condiciones que permitan al productor continuar creciendo y desarrollar su actividad con mayor capacidad financiera.",
+      "kind": "paragraphs"
+    },
+    "about.presentation_heading": {
+      "group": "about",
+      "label": "Título de presentación",
+      "max": 180,
+      "value": "Una organización que crece junto a sus productores"
+    },
+    "about.history_heading": {
+      "group": "about",
+      "label": "Título de propósito y organización",
+      "max": 180,
+      "value": "Unidos por una agricultura con más oportunidades"
+    },
+    "home.organic_photo_credit": {
+      "group": "home",
+      "label": "Producción orgánica: procedencia de fotografía",
+      "max": 5000,
+      "value": "Material del cliente"
+    }
+  },
+  "albums": [
+    {
+      "id": "miradas_del_campo",
+      "title": "Miradas del campo",
+      "description": "Cultivos, trabajo de la tierra y horizontes. Fotografías de referencia proporcionadas para esta propuesta visual.",
+      "photos": [
+        {
+          "id": "cosecha",
+          "src": "images/optimized/campo2-960.webp",
+          "full": "images/optimized/campo2-1440.webp",
+          "srcset": "images/optimized/campo2-480.webp 480w, images/optimized/campo2-960.webp 960w, images/optimized/campo2-1440.webp 1440w",
+          "width": 1440,
+          "height": 810,
+          "alt": "Cosechadora y tractor trabajando entre hileras de cultivos",
+          "caption": "Cosecha entre cultivos · Imagen proporcionada"
+        },
+        {
+          "id": "tractor",
+          "src": "images/optimized/campo3-960.webp",
+          "full": "images/optimized/campo3-1440.webp",
+          "srcset": "images/optimized/campo3-480.webp 480w, images/optimized/campo3-960.webp 960w, images/optimized/campo3-1440.webp 1440w",
+          "width": 1440,
+          "height": 1080,
+          "alt": "Tractor rojo sobre surcos de tierra junto a un cultivo verde",
+          "caption": "Preparación del suelo · Imagen proporcionada"
+        },
+        {
+          "id": "atardecer",
+          "src": "images/optimized/campo-960.webp",
+          "full": "images/optimized/campo-1440.webp",
+          "srcset": "images/optimized/campo-480.webp 480w, images/optimized/campo-960.webp 960w, images/optimized/campo-1440.webp 1440w",
+          "width": 1440,
+          "height": 810,
+          "alt": "Sol al atardecer iluminando un campo de cultivo",
+          "caption": "Campo al atardecer · Unsplash"
+        }
+      ]
+    },
+    {
+      "id": "maquinaria_apag",
+      "title": "Maquinaria y trabajo de campo",
+      "description": "Fotografías compartidas por el cliente.",
+      "photos": [
+        {
+          "id": "maquinaria1",
+          "src": "images/optimized/maquinaria1-960.webp",
+          "full": "images/optimized/maquinaria1-1440.webp",
+          "srcset": "images/optimized/maquinaria1-480.webp 480w, images/optimized/maquinaria1-960.webp 960w, images/optimized/maquinaria1-1440.webp 1254w",
+          "width": 960,
+          "height": 960,
+          "alt": "Tractor verde visto de frente en un entorno rural",
+          "caption": "Material del cliente"
+        },
+        {
+          "id": "maquinaria2",
+          "src": "images/optimized/maquinaria2-960.webp",
+          "full": "images/optimized/maquinaria2-1440.webp",
+          "srcset": "images/optimized/maquinaria2-480.webp 480w, images/optimized/maquinaria2-960.webp 960w, images/optimized/maquinaria2-1440.webp 1254w",
+          "width": 960,
+          "height": 960,
+          "alt": "Grupo de personas junto a un tractor y una rastra de discos",
+          "caption": "Material del cliente"
+        },
+        {
+          "id": "maquinaria3",
+          "src": "images/optimized/maquinaria3-960.webp",
+          "full": "images/optimized/maquinaria3-1440.webp",
+          "srcset": "images/optimized/maquinaria3-480.webp 480w, images/optimized/maquinaria3-960.webp 960w, images/optimized/maquinaria3-1440.webp 1440w",
+          "width": 960,
+          "height": 720,
+          "alt": "Trabajadores cargando caña de azúcar en un remolque junto a un tractor",
+          "caption": "Material del cliente"
+        },
+        {
+          "id": "maquinaria4",
+          "src": "images/optimized/maquinaria4-960.webp",
+          "full": "images/optimized/maquinaria4-1440.webp",
+          "srcset": "images/optimized/maquinaria4-480.webp 480w, images/optimized/maquinaria4-960.webp 960w, images/optimized/maquinaria4-1440.webp 1440w",
+          "width": 960,
+          "height": 720,
+          "alt": "Maquinaria de cosecha y remolque junto a un cultivo de caña de azúcar",
+          "caption": "Material del cliente"
+        }
+      ]
+    }
+  ],
+  "images": {
+    "hero": {
+      "label": "Portada · una sola fotografía",
+      "src": "images/hero/campo.jpg",
+      "alt": "",
+      "width": 1920,
+      "height": 1080
+    },
+    "gallery_one": {
+      "label": "Galería · foto principal",
+      "src": "images/optimized/campo2-960.webp",
+      "alt": "Cosechadora y tractor trabajando entre hileras de cultivos",
+      "width": 1440,
+      "height": 810
+    },
+    "gallery_two": {
+      "label": "Galería · segunda foto",
+      "src": "images/optimized/campo3-960.webp",
+      "alt": "Tractor rojo sobre surcos de tierra junto a un cultivo verde",
+      "width": 1440,
+      "height": 1080
+    },
+    "gallery_three": {
+      "label": "Galería · tercera foto",
+      "src": "images/optimized/campo-960.webp",
+      "alt": "Sol al atardecer iluminando un campo de cultivo",
+      "width": 1440,
+      "height": 810
+    },
+    "services": {
+      "label": "Servicios · fotografía",
+      "src": "images/optimized/maquinaria4-960.webp",
+      "srcset": "images/optimized/maquinaria4-480.webp 480w, images/optimized/maquinaria4-960.webp 960w, images/optimized/maquinaria4-1440.webp 1440w",
+      "alt": "Maquinaria de cosecha y remolque junto a un cultivo de caña de azúcar",
+      "width": 960,
+      "height": 720
+    },
+    "about": {
+      "label": "Sobre nosotros · fotografía",
+      "src": "images/optimized/maquinaria2-960.webp",
+      "srcset": "images/optimized/maquinaria2-480.webp 480w, images/optimized/maquinaria2-960.webp 960w, images/optimized/maquinaria2-1440.webp 1254w",
+      "alt": "Grupo de personas junto a un tractor y una rastra de discos",
+      "width": 960,
+      "height": 960
+    },
+    "organic": {
+      "label": "Inicio · producción orgánica",
+      "src": "images/optimized/maquinaria3-960.webp",
+      "srcset": "images/optimized/maquinaria3-480.webp 480w, images/optimized/maquinaria3-960.webp 960w, images/optimized/maquinaria3-1440.webp 1440w",
+      "alt": "Trabajadores cargando caña de azúcar en un remolque junto a un tractor",
+      "width": 960,
+      "height": 720
+    }
+  },
+  "services": [
+    {
+      "title": "Preparación y manejo del suelo",
+      "description": "Acompañamiento a los productores en actividades vinculadas con la preparación de las parcelas destinadas a la producción agrícola."
+    },
+    {
+      "title": "Capacitación en producción de caña orgánica",
+      "description": "Formación y orientación para fortalecer las buenas prácticas de producción y mejorar el conocimiento técnico de los productores asociados."
+    },
+    {
+      "title": "Normas de producción orgánica",
+      "description": "Capacitación sobre requisitos, procedimientos y prácticas necesarias para trabajar dentro de esquemas de producción orgánica."
+    },
+    {
+      "title": "Certificación y cumplimiento",
+      "description": "Acompañamiento de procesos vinculados con estándares y esquemas como CERES Fair Trade, Bio Suisse, Naturland, normativa orgánica de la Unión Europea, NOP y FLOCERT, de acuerdo con las certificaciones y programas aplicables a la organización."
+    },
+    {
+      "title": "Comercio justo",
+      "description": "Promoción de una producción y comercialización basada en principios de organización, responsabilidad y mejores oportunidades para los productores."
+    },
+    {
+      "title": "Comercialización conjunta",
+      "description": "APAG organiza la venta conjunta de la producción de sus asociados, fortaleciendo la capacidad de negociación y coordinación de los productores."
+    },
+    {
+      "title": "Articulación institucional",
+      "description": "Trabajo conjunto con organismos e instituciones vinculados al desarrollo agrícola y al acompañamiento de los productores."
+    },
+    {
+      "title": "Gestión de oportunidades y financiamiento",
+      "description": "Búsqueda de mecanismos que permitan incorporar a los productores a proyectos de producción, mejoras productivas y acceso a capital operativo."
+    }
+  ]
+}

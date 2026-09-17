@@ -29,7 +29,6 @@
   .hero-bottom { display: none; }
   .intro { grid-template-columns: 1fr; gap: 26px; }
   .intro h2 { max-width: 21ch; }
-  .contact-band { align-items: flex-start; flex-direction: column; }
   .footer-inner { flex-direction: column; }
   .contact-list { grid-template-columns: 1fr; }
   .inner-page { padding-top: calc(var(--header-height) + 38px); }

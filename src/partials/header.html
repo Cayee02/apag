@@ -2,13 +2,14 @@
 <header class="site-header" data-header>
   <div class="container header-inner">
     <a class="brand" href="./index.html" aria-label="APAG — Inicio">
-      <img class="brand-logo" src="./images/logo/apag.png" width="66" height="66" alt="" fetchpriority="high">
+      <img class="brand-logo" src="./images/optimized/apag-132.webp" srcset="./images/optimized/apag-132.webp 132w, ./images/optimized/apag-264.webp 264w" sizes="66px" width="66" height="66" alt="">
       <span class="brand-label">Asociación de Productores<br>Agrícolas del Guairá</span>
     </a>
     <nav class="desktop-nav" aria-label="Navegación principal">
       <a href="./index.html" data-nav="inicio">Inicio</a>
       <a href="./servicios.html" data-nav="servicios">Servicios</a>
       <a href="./nosotros.html" data-nav="nosotros">Sobre nosotros</a>
+      <a href="./galeria.html" data-nav="galeria">Galería</a>
       <a href="./contacto.html" data-nav="contacto">Contacto</a>
     </nav>
     <a class="button header-contact" href="./contacto.html">Hablemos <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
@@ -17,19 +18,20 @@
 </header>
 <dialog class="mobile-menu" id="menu-movil" data-mobile-menu aria-label="Menú de navegación" data-lenis-prevent>
   <div class="menu-top">
-    <a href="./index.html" aria-label="APAG — Inicio"><img class="brand-logo" src="./images/logo/apag.png" width="66" height="66" alt=""></a>
+    <a href="./index.html" aria-label="APAG — Inicio"><img class="brand-logo" src="./images/optimized/apag-132.webp" width="66" height="66" alt=""></a>
     <button class="menu-close" type="button" data-menu-close>Cerrar <i data-lucide="x" aria-hidden="true"></i></button>
   </div>
   <nav aria-label="Navegación móvil">
     <a href="./index.html" data-nav="inicio">Inicio</a>
     <a href="./servicios.html" data-nav="servicios">Servicios</a>
     <a href="./nosotros.html" data-nav="nosotros">Sobre nosotros</a>
+    <a href="./galeria.html" data-nav="galeria">Galería</a>
     <a href="./contacto.html" data-nav="contacto">Contacto</a>
   </nav>
   <div class="menu-contact">
     <p>Conversemos.</p>
-    <a href="%APAG_PHONE_PRIMARY_HREF%">%APAG_PHONE_PRIMARY%</a>
-    <a href="%APAG_PHONE_SECONDARY_HREF%">%APAG_PHONE_SECONDARY%</a>
-    <a href="mailto:%APAG_EMAIL%">%APAG_EMAIL%</a>
+    <a href="%APAG_PHONE_PRIMARY_HREF%" data-cms-href="primary" data-cms="contact.primary_label">%APAG_PHONE_PRIMARY%</a>
+    <a href="%APAG_PHONE_SECONDARY_HREF%" data-cms-href="secondary" data-cms="contact.secondary_label">%APAG_PHONE_SECONDARY%</a>
+    <a href="mailto:%APAG_EMAIL%" data-cms-href="email" data-cms="contact.email">%APAG_EMAIL%</a>
   </div>
 </dialog>

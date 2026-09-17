@@ -1,0 +1,31 @@
+.hero h1 { font-size: clamp(1.85rem, 2.8vw, 3rem); line-height: 1.18; max-width: 26ch; }
+.hero-description { max-width: 48ch; font-size: 1rem; }
+.hero-copy { padding-top: calc(var(--header-height) + 55px); padding-bottom: 115px; }
+.institutional-copy p + p { margin-top: 24px; }
+.institutional-copy { max-width: 65ch; }
+.intro-copy .institutional-copy p { font-size: 1rem; }
+.about-identity h2 { margin-bottom: 28px; }
+.production-story { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(35px, 6vw, 90px); align-items: center; }
+.production-story img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 53% center; }
+.production-story figcaption { margin-top: 16px; font-size: .75rem; color: var(--muted); }
+.production-story h2 { font-size: clamp(2rem, 3vw, 3rem); margin-block: 20px 28px; }
+.production-story .text-link { margin-top: 28px; }
+.institutional-history .eyebrow { margin-bottom: 20px; color: var(--green-900); }
+.institutional-history h2 { font-size: clamp(2rem, 3vw, 3rem); }
+.about-client-image img { height: clamp(400px, 55vw, 650px); object-position: center 55%; }
+.service-stories { display: grid; gap: 75px; }
+.service-stories > article + article { padding-top: 65px; border-top: 1px solid var(--line); }
+.proposal-label { display: inline-block; padding: 8px 12px; background: #fff3bb; color: var(--green-950); font-size: .75rem; margin-block: 18px; border: 1px solid #d4be60; }
+.standards-note { margin-top: 24px; font-size: .8125rem; color: var(--muted); }
+.home-contact h2 { font-size: clamp(2.25rem, 3.4vw, 3.5rem); max-width: 24ch; }
+.home-contact-copy > p:not(.eyebrow) { margin-top: 24px; max-width: 46ch; color: #dce7df; }
+@media (max-width: 767px) {
+  .hero h1 { font-size: clamp(1.75rem, 7vw, 3rem); }
+  .hero-copy { padding: calc(var(--header-height) + 45px) var(--gutter) 45px; }
+  .hero-description { font-size: .9375rem; }
+  .production-story { grid-template-columns: 1fr; gap: 35px; }
+  .production-story img { aspect-ratio: 4 / 3; }
+  .about-client-image img { height: auto; object-fit: contain; }
+  .service-stories { gap: 48px; }
+  .service-stories > article + article { padding-top: 40px; }
+}

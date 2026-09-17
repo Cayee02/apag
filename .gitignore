@@ -4,3 +4,9 @@ dist/
 .env.*
 !.env.example
 *.log
+storage/
+dist-php/
+.tmp-cms-*/
+vendor/
+.tmp-contact-*/
+server/config.local.php

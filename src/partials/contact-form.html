@@ -1,0 +1,23 @@
+<form id="formulario" class="contact-form" action="./contacto.html#formulario" method="post" aria-labelledby="form-title" data-contact-form data-ready="false">
+  <span class="form-eyebrow">Conectemos con APAG</span>
+  <h2 id="form-title">Tu consulta,<br>nuestro próximo encuentro.</h2>
+  <p class="form-description">Cuéntanos en qué podemos ayudarte. Los campos marcados con * son obligatorios.</p>
+  <div id="form-feedback" class="form-feedback" data-form-notice role="status" tabindex="-1">El formulario no está disponible en este momento. Puedes escribirnos por correo o llamarnos.</div>
+  <input type="hidden" name="csrf" value="">
+  <input type="hidden" name="form_id" value="">
+  <input type="hidden" name="policy_version" value="">
+  <fieldset disabled data-form-fields>
+    <legend class="visually-hidden">Datos para tu consulta</legend>
+    <div class="contact-honeypot" aria-hidden="true"><label for="contact-website">Sitio web</label><input id="contact-website" name="website" type="text" autocomplete="off" tabindex="-1"></div>
+    <div class="form-grid">
+      <div class="form-field"><label for="contact-first-name">Nombre *</label><input id="contact-first-name" name="first_name" autocomplete="given-name" minlength="2" maxlength="80" required aria-describedby="first-name-error"><span class="field-error" id="first-name-error" data-form-error="first_name"></span></div>
+      <div class="form-field"><label for="contact-last-name">Apellido</label><input id="contact-last-name" name="last_name" autocomplete="family-name" maxlength="80" aria-describedby="last-name-error"><span class="field-error" id="last-name-error" data-form-error="last_name"></span></div>
+      <div class="form-field"><label for="contact-email">Correo electrónico *</label><input id="contact-email" name="email" type="email" autocomplete="email" maxlength="254" required aria-describedby="email-error"><span class="field-error" id="email-error" data-form-error="email"></span></div>
+      <div class="form-field"><label for="contact-phone">Teléfono</label><input id="contact-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" aria-describedby="phone-error"><span class="field-error" id="phone-error" data-form-error="phone"></span></div>
+      <div class="form-field form-wide"><label for="contact-subject">Asunto *</label><input id="contact-subject" name="subject" minlength="3" maxlength="160" required aria-describedby="subject-error"><span class="field-error" id="subject-error" data-form-error="subject"></span></div>
+      <div class="form-field form-wide"><label for="contact-message">Mensaje *</label><textarea id="contact-message" name="message" rows="6" minlength="20" maxlength="4000" required aria-describedby="message-hint message-error"></textarea><span class="field-help" id="message-hint">Entre 20 y 4000 caracteres.</span><span class="field-error" id="message-error" data-form-error="message"></span></div>
+    </div>
+    <div class="form-consent"><label for="contact-consent"><input id="contact-consent" name="privacy_consent" type="checkbox" value="1" required aria-describedby="privacy-error"><span>He leído y acepto la <a href="./privacidad.html" target="_blank" rel="noopener">política de privacidad <span class="visually-hidden">(se abre en otra pestaña)</span></a>. *</span></label><span class="field-error" id="privacy-error" data-form-error="privacy_consent"></span></div>
+    <div class="form-actions"><button class="button" type="submit" data-form-submit><span data-submit-label>Enviar consulta</span><span class="submit-arrow" aria-hidden="true">↗</span></button><span class="form-note">Responderemos a tu correo electrónico.</span></div>
+  </fieldset>
+</form>

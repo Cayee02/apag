@@ -23,3 +23,82 @@ El servidor de desarrollo queda en http://127.0.0.1:5173/ durante esta sesión. 
 La estructura de Inicio y las páginas internas pasan `npm.cmd run build`. Las comprobaciones agregadas verifican también IDs únicos, destinos de anclajes y referencias aria-labelledby/aria-controls. Los nuevos recursos son locales y el SVG decorativo está incluido en el build.
 
 La revisión independiente mencionada arriba corresponde a la primera entrega. La segunda entrega se revisó desde el código; todavía no se verificó la apariencia ni la interacción real en navegador, ya que la lista de navegadores integrados continúa vacía.
+
+## Preloader
+- Build aprobado con apertura compartida y estilos/bootstrap críticos en las cuatro entradas.
+- HTTP 200 y markup del preloader presente en cada página servida por Vite.
+- Pruebas funcionales del bootstrap y coordinador: límite menor a 1.5 segundos aun sin bundle, movimiento reducido sin espera, Tab/Escape sin interferir con el teclado, pagehide, cambio de preferencia, toque, callback único, módulo tardío y cancelación HMR.
+- La comprobación de build verifica un único overlay por página y la presencia del script de salida independiente.
+- El navegador integrado sigue sin estar disponible: no se verificó el resultado visual animado.
+
+## Fotografías y carrusel — comprobación histórica
+- Build aprobado con variantes WebP y galería de tres imágenes.
+- Checks de recursos ampliados a srcset e imagesrcset.
+- Pruebas simuladas del carrusel: cambio automático a 6s, pausa por foco/pestaña oculta, selección manual, Home, movimiento reducido, error de carga, carga pendiente interrumpida por foco y limpieza.
+- Los WebP campo2/campo3 de 960px se abrieron y verificaron como imágenes completas, conservando las escenas originales.
+- La lista de navegadores integrados sigue vacía; no hay capturas ni pruebas de composición/interacción real de la página.
+
+## Revisión actual — portada única y SEO
+
+- `npm.cmd run build` y `npm.cmd run check`: aprobados, con cinco entradas HTML incluyendo la plantilla 404.
+- Comprobación de una sola fotografía en portada, usando `campo.jpg`, y ausencia del carrusel. Sus pruebas anteriores fueron retiradas junto con el módulo.
+- Enlaces, recursos, srcset, IDs, anclajes y referencias ARIA válidos en las cinco páginas; plantilla resuelta, un H1 y preloader único por página.
+- Pruebas SEO: borrador sin canonical inventado, rechazo de URLs inválidas o indexación sin dominio, rutas absolutas en subdirectorio, cuatro URLs del sitemap, exclusión de 404, metadatos sin duplicados, JSON-LD válido y escape de cierre de script.
+- Comprobación de emisión de robots y sitemap según configuración. El sitemap no se emite sin dominio.
+- Servidor Vite: HTTP 200 en las cinco páginas y robots; sitemap HTTP 404 mientras no se configure dominio. La plantilla 404 devuelve 200 al abrirla directamente: el estado HTTP de errores reales se configura en el hosting.
+- Las animaciones nuevas se revisaron desde el código, incluyendo condiciones de puntero/ancho/movimiento reducido y limpieza. Su apariencia y comportamiento real no se verificaron en navegador.
+
+No se realizaron mediciones Lighthouse ni certificación WCAG. En esta revisión anterior, CMS y envío de formulario todavía no estaban implementados.
+
+## Panel PHP — validación actual
+
+- Sintaxis correcta en los módulos PHP y vista. Runtime local PHP 8.3.16 con GD/WebP, Fileinfo, Mbstring y Session.
+- Validación de campos, correo y teléfono internacional; servicios vacíos ignorados y servicio incompleto rechazado. No se publica contenido institucional inventado.
+- Persistencia, revisión incrementada, conflicto rechazado sin sobrescritura y backup previo comprobados. Almacenamiento dentro de la raíz pública rechazado.
+- Render conserva título de portada, manifiesto, una sola foto y SVG; textos/servicios de prueba con HTML se escapan. El placeholder auxiliar de historia se retira al completar el contenido.
+- Imágenes inválidas y slot inválido rechazados; reencodificación WebP elimina payload adjunto de una imagen de prueba. No se amplían fuentes pequeñas. Preload y foto reemplazada quedan sincronizados.
+- Recorridos HTTP reales: acceso sin configurar, creación por CLI, hash de contraseña, acceso no autorizado, CSRF, sesión regenerada, edición/publicación sin recompilar, conflicto, validación fallida, contacto/enlaces/schema, servicios, subida multipart y restauración.
+- Cookies HttpOnly/SameSite Strict y panel sin caché/incrustación. Cambio de contraseña invalida otra sesión y renueva CSRF. Logout y límite de cinco intentos comprobados. Vencimiento por inactividad, duración máxima y versión revocada comprobados en PHP.
+- Archivos privados no descargables desde las rutas de prueba. Errores HTTP 404 reales con recursos correctos para URLs anidadas; soporte de subdirectorio, HEAD y rechazo de métodos no admitidos.
+- Fuentes locales del panel servidas correctamente. Cuentas/contenido/media de prueba aislados en carpetas temporales, eliminados al terminar.
+
+El intento de revisión en navegador no pudo continuar: no hay navegadores disponibles y la lista sigue vacía. No hubo screenshots ni interacción de UI real. Apache, HTTPS/cookies Secure tras proxy y hosting real todavía necesitan validación. Las pruebas de esta entrega anterior no comprobaron envío de correo; se incorpora en la siguiente revisión.
+
+## Formulario — validación actual
+
+- `npm.cmd run build`, `check`, `check:php` y `check:contact`: aprobados. Seis HTML compilados con referencias ARIA, incluyendo aria-describedby, y recursos válidos.
+- Validación JS y PHP de campos requeridos/opcionales, longitud, acentos/trim, email, teléfono, aceptación y rechazo de CR/LF en cabeceras. Arrays inválidos rechazados.
+- Compatibilidad de datos CMS anteriores: privacidad se incorpora pendiente por defecto. Borradores no aprobados no aparecen en la página pública; el panel rechaza aprobar el placeholder.
+- Prueba SMTP real local con PHPMailer 7.1.1: remitente/destinatario fijos, Reply-To del visitante y cuerpo UTF-8 texto plano con consulta/versión de política.
+- API/HTML HTTP: CSRF, honeypot, tiempo mínimo, reserva/límites, éxito confirmado, repetición de token sin segundo email, nueva consulta sobre token anterior rechazada, cambio de política con consentimiento reiniciado.
+- Recorrido sin JS probado por HTTP: formulario habilitado en HTML con configuración/política de prueba, POST exitoso con redirección, feedback de éxito y errores escapados con valores conservados.
+- SMTP de prueba rechaza el envío: respuesta 503 sin diagnósticos privados y sin éxito falso. No se guarda la consulta ni correo personal en content.json; contadores no contienen IP clara.
+- Subdirectorio conserva acción y enlace de política correctos; secreto privado no descargable. Servidor local principal responde 200 en Contacto, API y Privacidad, con envío deshabilitado por política/configuración pendientes.
+
+Las pruebas usaron configuración, cuentas, contenido y SMTP temporales aislados, sin credenciales reales ni mensajes externos. No se probó TLS real, SMTP del hosting, recepción en bandeja ni Apache. El navegador integrado sigue sin estar disponible: QA visual, estados interactivos reales y dispositivos pendientes.
+
+## Álbumes y cierre de Inicio — validación actual
+
+- Build PHP, checks frontend, checks PHP y formulario HTTP/SMTP local aprobados. Portada única y galería editorial conservadas.
+- PHP: textos/atributos escapados, identificadores de álbum/foto existentes, exclusión de álbumes vacíos y límites de 12 álbumes/40 fotos comprobados.
+- HTTP con cuenta temporal: crear álbum vacío sin publicarlo; subir foto real, reencodificar a WebP sin payload original, publicar sin recompilar y servir imagen grande; editar leyenda con HTML escapado; ordenar fotos y cambiar portada; retirar foto y eliminar álbum.
+- CSRF inválido rechazado; conflicto de revisión conserva revisión anterior y no añade archivos; identificador de foto de otro álbum rechazado; subida sin archivo rechazada. Enlaces del álbum funcionan en subdirectorio.
+- Contacto de Inicio pasa a una sola sección; fuentes, enlaces y referencias ARIA de los seis HTML siguen válidos. Paquete de hosting actualizado.
+
+El navegador vuelve a reportar «No browser is available» y lista vacía. No se comprobó la composición visual ni se recorrió el visor real con ratón/teclado. Las pruebas HTTP de álbumes ejercitan formularios nativos del panel; no equivalen a revisión visual. No se modificaron cuentas/contenido/media reales con las pruebas.
+
+## Galería independiente — validación actual
+
+Build y checks frontend/PHP aprobados con siete HTML. `galeria.html` tiene navegación activa, recursos, referencias ARIA, preloader y metadatos; el sitemap condicional incluye cinco páginas principales. Se añadió el paso por PHP en las reglas Apache para que el hosting renderice los álbumes del panel.
+
+HTTP: Galería responde 200 en raíz/subcarpeta; fotos subidas y leyendas editadas aparecen allí sin recompilar; álbumes vacíos y fotos retiradas se ocultan. Inicio no contiene el bloque de álbumes ni el visor, mantiene su galería editorial y enlaza a Galería. Panel con sección «Galería» y acceso a la página pública. Pruebas con datos aislados. QA visual del menú ampliado/visor y validación Apache real siguen pendientes.
+
+## Contenido institucional y maquinaria — validación actual
+
+Build PHP y checks frontend/PHP/formulario aprobados. Siete HTML con recursos/referencias ARIA correctos; título de tres líneas, frase institucional, ocho servicios y cuatro fotos nuevas disponibles por defecto. PHP renderiza párrafos separados sin perder el escape; borrar el listado de servicios no restaura el listado anterior de la plantilla.
+
+Misión/visión: dos rótulos de propuesta por defecto; aprobar solo misión retira solo su rótulo; aprobar un placeholder de visión se rechaza por HTTP. Las pruebas usan datos aislados. La carga institucional autorizada sí se aplicó al CMS local real bajo bloqueo/revisión y con backup, conservando contacto/privacidad/álbumes anteriores.
+
+Comprobación HTTP del sitio local: Inicio, Sobre APAG y Servicios responden 200 con texto cargado, sin placeholder institucional; portada única y álbumes fuera de Inicio. Galería contiene las cuatro fotos nuevas. CMS real con ocho servicios, misión/visión sin aprobar y privacidad aún pendiente. No se envió correo externo.
+
+Sharp generó variantes WebP sin ampliar fotos pequeñas; srcset usa sus dimensiones reales. Los PNG originales se inspeccionaron. El navegador sigue sin estar disponible; no hubo screenshot ni revisión de composición, recortes y estados reales del panel. Hosting/Apache, TLS real y recepción de correo siguen pendientes.

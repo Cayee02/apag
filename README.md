@@ -107,4 +107,41 @@ npm.cmd run preview
 
 La compilación se genera en `dist/`. En shells donde npm no esté restringido puede usarse `npm` en lugar de `npm.cmd`.
 
-Estado y próximos pasos: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Procedencia de imágenes: [docs/ASSETS.md](docs/ASSETS.md). No se considera una entrega final de producción; faltan contenido oficial, CMS, formulario y verificación visual.
+Estado y próximos pasos: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Procedencia de imágenes: [docs/ASSETS.md](docs/ASSETS.md). No se considera una entrega final de producción; faltan contenido oficial, activación de correo/política, configuración de hosting y verificación visual.
+
+Roadmap actualizado por fase: [docs/ROADMAP_STATUS.md](docs/ROADMAP_STATUS.md). Configuración de dominio, indexación y metadatos: [docs/SEO.md](docs/SEO.md). La portada usa nuevamente una sola imagen, el atardecer original; la galería fotográfica se conserva.
+
+## Panel PHP integrado
+
+El gestor seleccionado es un panel ligero PHP: textos principales, fotos, servicios y contacto editables, con guardado inmediato sobre el diseño actual.
+
+```sh
+npm.cmd run admin:create
+npm.cmd run dev:php
+```
+
+El primer comando activa tu cuenta solicitando usuario y contraseña sin mostrarla. El segundo compila y abre el servidor local: web http://127.0.0.1:8080/ y panel http://127.0.0.1:8080/admin. Vite en 5173 continúa siendo el entorno de diseño y no ejecuta el panel.
+
+```sh
+npm.cmd run check:php
+npm.cmd run build:php
+```
+
+El paquete PHP queda en `dist-php/` con código privado y raíz pública separados. No incluye la cuenta, datos locales ni configuración privada SMTP. Requiere PHP 8.2+, GD/WebP, Fileinfo, Mbstring y sesiones; reglas de Apache incluidas, pendientes de validar en hosting. Guía de uso, respaldos y publicación: [docs/ADMIN.md](docs/ADMIN.md).
+
+## Formulario de contacto
+
+Formulario PHP con validación, antispam y PHPMailer para SMTP del hosting. Instalar las dependencias PHP antes de generar el paquete:
+
+```sh
+composer install --no-dev --prefer-dist --no-interaction
+npm.cmd run check:contact
+```
+
+El envío real requiere configurar el correo del hosting y publicar la política aprobada desde el panel. La política sigue pendiente por decisión del usuario; las pruebas de envío usan SMTP local aislado y no envían correos a APAG. Instrucciones: [docs/CONTACT_FORM.md](docs/CONTACT_FORM.md).
+
+## Contenido institucional y galería
+
+El texto propuesto recibido se cargó en Inicio, Sobre APAG, Servicios y el panel, con ocho servicios y seis pilares. Misión/visión se muestran como propuestas y se aprueban por separado desde Sobre APAG. Fuente: `src/data/institutional.json`.
+
+La página `galeria.html`, accesible desde los menús, muestra álbumes administrables. Incluye cuatro fotos de maquinaria compartidas por el cliente y mejoradas con IA, optimizadas a WebP. El panel permite añadir más fotos y álbumes. Portada original y galería editorial de Inicio conservadas. Uso y carga inicial: [docs/ADMIN.md](docs/ADMIN.md).

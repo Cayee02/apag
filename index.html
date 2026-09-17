@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>APAG | Asociación de Productores Agrícolas del Guairá</title>
-  <meta name="description" content="Conoce a la Asociación de Productores Agrícolas del Guairá y encuentra sus datos de contacto institucional.">
+  <meta name="description" content="APAG fortalece a sus productores con organización, capacitación, producción de caña de azúcar orgánica y comercialización conjunta en el Guairá.">
   <meta name="theme-color" content="#063d26">
   <meta name="robots" content="noindex, nofollow">
   <meta property="og:title" content="APAG | Asociación de Productores Agrícolas del Guairá">
   <meta property="og:description" content="Conoce APAG y contacta con la asociación.">
   <meta property="og:type" content="website">
-  <link rel="icon" type="image/png" href="./images/logo/apag.png">
+  <link rel="icon" type="image/png" href="./images/optimized/apag-icon.png">
   <link rel="preload" as="image" href="./images/hero/campo.jpg">
 </head>
 <body data-page="inicio">
@@ -25,55 +25,67 @@
     <section class="hero" aria-labelledby="hero-title" data-hero>
       <div class="hero-copy">
         <p class="hero-location">Guairá · Paraguay</p>
-        <h1 id="hero-title" data-hero-title>Cultivamos<br><span>futuro.</span></h1>
-        <p class="hero-description" data-hero-description>Asociación de Productores Agrícolas del Guairá. Agricultura, territorio y comunidad.</p>
+        <h1 id="hero-title" data-hero-title data-cms="home.title">Cultivamos producción.<br>Fortalecemos productores.<br><span>Construimos futuro.</span></h1>
+        <p class="hero-description" data-hero-description data-cms="home.description">Asociación de Productores Agrícolas del Guairá. Agricultura, territorio y comunidad.</p>
         <div class="hero-actions" data-hero-actions>
-          <a class="button" href="./nosotros.html">Conoce APAG <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-          <a class="button button-outline" href="./contacto.html">Contáctanos <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          <a class="button" href="./nosotros.html" data-magnetic>Conocer APAG <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+          <a class="button button-outline" href="./servicios.html" data-magnetic>Nuestros servicios <i data-lucide="arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
       <figure class="hero-media">
-        <img class="hero-photo" src="./images/hero/campo.jpg" width="1920" height="1080" alt="" fetchpriority="high" data-hero-photo>
-        <figcaption class="hero-media-caption"><strong>La tierra nos conecta.</strong><span>Imagen de referencia · Unsplash</span></figcaption>
+        <img class="hero-photo" src="./images/hero/campo.jpg" width="1920" height="1080" alt="" fetchpriority="high" data-hero-photo data-cms-image="hero">
+        <figcaption class="hero-media-caption"><strong data-cms="home.photo_caption">La tierra nos conecta.</strong><span data-cms="home.photo_credit">Imagen de referencia · Unsplash</span></figcaption>
       </figure>
       <a class="hero-bottom" href="#asociacion"><span class="scroll-mark"><i data-lucide="arrow-down" aria-hidden="true"></i></span>Descubre APAG</a>
     </section>
     <section class="container intro" id="asociacion" aria-labelledby="intro-title" data-reveal>
-      <h2 id="intro-title">Productores agrícolas.<br>Un mismo territorio.</h2>
+      <h2 id="intro-title" data-cms="home.intro_title">Productores agrícolas.<br>Un mismo territorio.</h2>
       <div class="intro-copy">
-        <p>APAG es la Asociación de Productores Agrícolas del Guairá. Este es el punto de encuentro para conocer la asociación y comunicarte con ella.</p>
+        <div class="institutional-copy" data-cms="home.intro"></div>
         <a class="text-link" href="./nosotros.html">Sobre nuestra asociación <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
       </div>
     </section>
     <section class="manifesto" aria-labelledby="manifesto-title">
-      <img class="field-lines" src="./images/graphics/field-lines.svg" width="800" height="600" alt="" loading="lazy">
+      %APAG_FIELD_LINES%
       <div class="container manifesto-inner">
-        <h2 id="manifesto-title" data-reveal>El futuro empieza<br>en nuestras <span>raíces.</span></h2>
-        <p>Una identidad que nace de la tierra y mira hacia adelante.</p>
+        <h2 id="manifesto-title" data-reveal data-cms="home.manifesto">El futuro empieza<br>en nuestras <span>raíces.</span></h2>
+        <p data-cms="home.manifesto_description">Una identidad que nace de la tierra y mira hacia adelante.</p>
       </div>
     </section>
     <section class="container section-space" aria-labelledby="pillars-title">
-      <div class="section-heading"><h2 id="pillars-title">La tierra como<br>punto de encuentro.</h2><p>Los conceptos que inspiran esta propuesta de identidad digital.</p></div>
+      <div class="section-heading"><h2 id="pillars-title" data-cms="home.pillars_heading">Nuestros pilares</h2><p data-cms="home.pillars_intro"></p></div>
       <div class="pillars">
-        <article><i data-lucide="sprout" aria-hidden="true"></i><h3>Agricultura</h3><p>La tierra, los cultivos y el trabajo de producir.</p></article>
-        <article><i data-lucide="map-pin" aria-hidden="true"></i><h3>Territorio</h3><p>El Guairá como parte de nuestra identidad.</p></article>
-        <article><i data-lucide="users-round" aria-hidden="true"></i><h3>Comunidad</h3><p>Las personas como centro del encuentro.</p></article>
+        <article><i data-lucide="sprout" aria-hidden="true"></i><h3 data-cms="home.pillar_1_title"></h3><p data-cms="home.pillar_1_body"></p></article>
+        <article><i data-lucide="sprout" aria-hidden="true"></i><h3 data-cms="home.pillar_2_title"></h3><p data-cms="home.pillar_2_body"></p></article>
+        <article><i data-lucide="users-round" aria-hidden="true"></i><h3 data-cms="home.pillar_3_title"></h3><p data-cms="home.pillar_3_body"></p></article>
+        <article><i data-lucide="users-round" aria-hidden="true"></i><h3 data-cms="home.pillar_4_title"></h3><p data-cms="home.pillar_4_body"></p></article>
+        <article><i data-lucide="sprout" aria-hidden="true"></i><h3 data-cms="home.pillar_5_title"></h3><p data-cms="home.pillar_5_body"></p></article>
+        <article><i data-lucide="map-pin" aria-hidden="true"></i><h3 data-cms="home.pillar_6_title"></h3><p data-cms="home.pillar_6_body"></p></article>
       </div>
     </section>
     <section class="services-preview section-space" aria-labelledby="services-preview-title">
-      <div class="container section-heading"><h2 id="services-preview-title">Servicios de APAG</h2><a class="text-link" href="./servicios.html">Explorar servicios <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
-      <div class="container content-awaiting"><div><h3>Información de servicios</h3><p class="pending-content">[CONTENIDO PENDIENTE APAG]</p><p>Consulta con la asociación para conocer los servicios disponibles.</p></div><a class="button" href="./contacto.html">Hacer una consulta <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+      <div class="container section-heading"><h2 id="services-preview-title">Mucho más que producir</h2><a class="text-link" href="./servicios.html">Explorar servicios <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+      <div class="container" data-cms-services="preview">%APAG_SERVICES_PREVIEW%</div>
     </section>
+    <section class="container section-space production-story" aria-labelledby="organic-title">
+      <figure><img data-cms-image="organic" src="./images/optimized/maquinaria3-960.webp" srcset="./images/optimized/maquinaria3-480.webp 480w, ./images/optimized/maquinaria3-960.webp 960w, ./images/optimized/maquinaria3-1440.webp 1440w" sizes="(max-width: 767px) 90vw, 45vw" width="960" height="720" alt="Trabajadores cargando caña de azúcar en un remolque junto a un tractor" loading="lazy" decoding="async"><figcaption data-cms="home.organic_photo_credit">Material del cliente</figcaption></figure>
+      <div><p class="eyebrow">Producción orgánica</p><h2 id="organic-title" data-cms="home.organic_heading"></h2><div class="institutional-copy" data-cms="home.organic_body"></div><a class="text-link" href="./servicios.html">Nuestro trabajo con los productores <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div>
+    </section>
+    <section class="institutional-background"><div class="container section-space institutional-history"><div><p class="eyebrow">Capacitación</p><h2 data-cms="home.training_heading"></h2></div><div class="institutional-copy" data-cms="home.training_body"></div></div></section>
     <section class="container section-space gallery-section" aria-labelledby="gallery-title">
-      <div class="section-heading"><h2 id="gallery-title">APAG en imágenes</h2><p>Un espacio para las fotografías oficiales de la asociación.</p></div>
-      <div class="gallery-empty"><i data-lucide="images" aria-hidden="true"></i><div><h3>Galería de la asociación</h3><p class="pending-content">[CONTENIDO PENDIENTE APAG]</p></div></div>
+      <div class="section-heading"><h2 id="gallery-title">El campo<br>en imágenes.</h2><p>Una mirada a la agricultura, los cultivos y el trabajo de la tierra.</p></div>
+      <div class="field-gallery">
+        <figure class="gallery-feature"><img data-cms-image="gallery_one" src="./images/optimized/campo2-960.webp" srcset="./images/optimized/campo2-480.webp 480w, ./images/optimized/campo2-960.webp 960w, ./images/optimized/campo2-1440.webp 1440w" sizes="(max-width: 767px) 90vw, 55vw" width="1440" height="810" alt="Cosechadora y tractor trabajando entre hileras de cultivos" loading="lazy" decoding="async"><figcaption><span data-cms="gallery.one_title">El trabajo de producir.</span><small data-cms="gallery.one_detail">Cosecha entre cultivos</small></figcaption></figure>
+        <figure><img class="photo-tractor" data-cms-image="gallery_two" src="./images/optimized/campo3-960.webp" srcset="./images/optimized/campo3-480.webp 480w, ./images/optimized/campo3-960.webp 960w, ./images/optimized/campo3-1440.webp 1440w" sizes="(max-width: 767px) 90vw, 36vw" width="1440" height="1080" alt="Tractor rojo sobre surcos de tierra junto a un cultivo verde" loading="lazy" decoding="async"><figcaption><span data-cms="gallery.two_title">Todo empieza en la tierra.</span><small data-cms="gallery.two_detail">Preparación del suelo</small></figcaption></figure>
+        <figure><img data-cms-image="gallery_three" src="./images/optimized/campo-960.webp" srcset="./images/optimized/campo-480.webp 480w, ./images/optimized/campo-960.webp 960w, ./images/optimized/campo-1440.webp 1440w" sizes="(max-width: 767px) 90vw, 36vw" width="1440" height="810" alt="Sol al atardecer iluminando un campo de cultivo" loading="lazy" decoding="async"><figcaption><span data-cms="gallery.three_title">Una mirada al horizonte.</span><small data-cms="gallery.three_detail">Campo al atardecer · Unsplash</small></figcaption></figure>
+      </div>
+      <p class="gallery-note">Imágenes de referencia para esta propuesta visual.</p>
     </section>
-    <section class="contact-cta" aria-labelledby="quick-contact-title">
-      <div class="container contact-cta-inner"><div><h2 id="quick-contact-title">Conectemos.</h2><p>Comunícate directamente con la asociación.</p></div><a class="button" href="%APAG_PHONE_PRIMARY_HREF%">Llamar al %APAG_PHONE_PRIMARY% <i data-lucide="phone" aria-hidden="true"></i></a></div>
-    </section>
-    <section class="container contact-band" aria-labelledby="contact-title">
-      <h2 id="contact-title">El próximo paso empieza conversando.</h2>
-      <a class="button" href="./contacto.html">Contactar con APAG <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+    <section class="home-contact" aria-labelledby="contact-title">
+      <div class="container home-contact-inner">
+        <div class="home-contact-copy"><p class="eyebrow">Conversemos</p><h2 id="contact-title" data-cms="home.cta_heading"></h2><p data-cms="home.cta_body"></p><p>¿Querés conocer más sobre nuestro trabajo?</p></div>
+        <div class="home-contact-actions"><a class="button" href="./contacto.html">Contactar con APAG <i data-lucide="arrow-up-right" aria-hidden="true"></i></a><a class="home-contact-phone" href="%APAG_PHONE_PRIMARY_HREF%" data-cms-href="primary"><span>O llámanos directamente</span><strong data-cms="contact.primary_label">%APAG_PHONE_PRIMARY%</strong></a></div>
+      </div>
     </section>
   </main>
   %APAG_FOOTER%

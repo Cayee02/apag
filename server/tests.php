@@ -1,0 +1,96 @@
+<?php
+declare(strict_types=1);
+if (PHP_SAPI !== 'cli') { http_response_code(404); exit; }
+require __DIR__ . '/bootstrap.php';
+require __DIR__ . '/admin.php';
+function check(bool $condition, string $message): void { if (!$condition) throw new RuntimeException($message); }
+function rejects(callable $callback, string $type): void {
+    try { $callback(); } catch (Throwable $error) { check($error instanceof $type, 'Excepción esperada: ' . $type); return; }
+    throw new RuntimeException('Falta rechazo: ' . $type);
+}
+$fixture = $argv[1];
+foreach (['gd', 'fileinfo', 'mbstring', 'session'] as $extension) check(extension_loaded($extension), 'Falta extensión: ' . $extension);
+check(PHP_VERSION_ID >= 80200 && function_exists('imagewebp'), 'Necesario PHP 8.2+ y GD con WebP.');
+$privateDirectory = getenv('APAG_STORAGE_DIR');
+putenv('APAG_STORAGE_DIR=' . cms_public_directory());
+rejects(fn() => cms_storage(), RuntimeException::class);
+putenv('APAG_STORAGE_DIR=' . $privateDirectory);
+$default = cms_content(); check($default['revision'] === 0, 'Contenido inicial');
+$validated = cms_validate_texts($default['texts'], 'contact');
+check($validated['contact.email'] === 'asociacion.prod.agric.guaira@gmail.com', 'Correo documentado');
+rejects(fn() => cms_validate_texts(array_replace($default['texts'], ['contact.primary_number' => 'javascript:alert(1)']), 'contact'), CmsValidation::class);
+rejects(fn() => cms_validate_texts(array_replace($default['texts'], ['home.title' => 'Una sola línea']), 'home'), CmsValidation::class);
+rejects(fn() => cms_validate_texts(['contact.email' => []], 'contact'), CmsValidation::class);
+rejects(fn() => cms_validate_password(str_repeat('a', 73)), CmsValidation::class);
+rejects(fn() => cms_validate_password('corta'), CmsValidation::class);
+check(cms_validate_services(['title' => [''], 'description' => ['']]) === [], 'Servicios vacíos no inventados');
+rejects(fn() => cms_validate_services(['title' => ['Solo título'], 'description' => ['']]), CmsValidation::class);
+$next = cms_update_content(0, function ($current) { $current['texts']['about.history'] = 'Historia confirmada de prueba'; return $current; });
+check($next['revision'] === 1 && cms_content()['texts']['about.history'] === 'Historia confirmada de prueba', 'Guardado persistente');
+rejects(fn() => cms_update_content(0, fn($current) => $current), CmsConflict::class);
+check(cms_content()['revision'] === 1, 'Conflicto no sobrescribe');
+check(cms_read_json(cms_storage() . '/content.json.bak', [])['revision'] === 0, 'Backup anterior');
+$record = ['username' => 'unit-test', 'password_hash' => password_hash('Password-of-unit-test', PASSWORD_DEFAULT), 'version' => bin2hex(random_bytes(24))];
+cms_locked('admin', fn($path) => cms_atomic_json($path, $record));
+$_SESSION = ['admin_version' => $record['version'], 'last_seen' => time(), 'signed_in' => time()];
+check(cms_authenticated(), 'Sesión válida');
+$_SESSION['last_seen'] = time() - 1801;
+check(!cms_authenticated(), 'Inactividad vence sesión');
+$_SESSION = ['admin_version' => $record['version'], 'last_seen' => time(), 'signed_in' => time() - 28801];
+check(!cms_authenticated(), 'Duración máxima vence sesión');
+$_SESSION = ['admin_version' => 'revoked', 'last_seen' => time(), 'signed_in' => time()];
+check(!cms_authenticated(), 'Versión revocada no ingresa');
+$home = file_get_contents(cms_public_directory() . '/index.html');
+$rendered = cms_render($home, $default);
+check(str_contains($rendered, 'Cultivamos producción.<br>Fortalecemos productores.<br><span>Construimos futuro.</span>'), 'Título institucional de tres líneas');
+check(str_contains($rendered, 'Juntos cultivamos<br><span>oportunidades.</span>'), 'Frase institucional suministrada');
+check(count($default['services']) === 8 && count($default['albums'][1]['photos']) === 4, 'Servicios y material del cliente disponibles por defecto');
+$withoutServices = $default; $withoutServices['services'] = [];
+check(!str_contains(cms_render($home, $withoutServices), 'cms-service-card'), 'Retirar servicios no restaura los valores de la plantilla');
+check(substr_count($rendered, 'class="hero-photo"') === 1, 'Una sola foto en portada');
+check(str_contains($rendered, 'data-field-lines') && str_contains($rendered, 'viewBox="0 0 800 600"'), 'SVG no alterado');
+$malicious = $default;
+$malicious['texts']['home.intro'] = '<script>alert("x")</script> & prueba';
+$malicious['services'] = [['title' => '<img src=x onerror=alert(1)>', 'description' => 'Descripción <script>bad</script>']];
+$output = cms_render($home, $malicious);
+check(!str_contains($output, '<script>alert("x")') && str_contains($output, '&lt;script&gt;'), 'Textos escapados');
+check(!str_contains($output, '<img src=x') && str_contains($output, 'cms-service-grid'), 'Servicios escapados y renderizados');
+check(substr_count($output, 'class="field-gallery"') === 1 && str_contains($output, 'id="gallery-title"'), 'Galería no reemplazada por servicios');
+$about = cms_render(file_get_contents(cms_public_directory() . '/nosotros.html'), $next);
+check(str_contains($about, 'Historia confirmada de prueba'), 'Propósito editable');
+check(substr_count($about, 'Propuesta pendiente de aprobación por APAG') === 2, 'Misión y visión propuestas visibles');
+$approved = $next; $approved['institutional_approvals']['mission'] = true;
+check(substr_count(cms_render(file_get_contents(cms_public_directory() . '/nosotros.html'), $approved), 'Propuesta pendiente de aprobación por APAG') === 1, 'Aprobaciones independientes');
+$image = imagecreatetruecolor(640, 360); $color = imagecolorallocate($image, 15, 110, 60); imagefill($image, 0, 0, $color);
+imagepng($image, $fixture . '/valid.png'); imagejpeg($image, $fixture . '/polyglot.jpg'); imagedestroy($image);
+file_put_contents($fixture . '/polyglot.jpg', '<?php APAG_PAYLOAD ?>', FILE_APPEND);
+file_put_contents($fixture . '/invalid.php', '<?php echo "no";');
+rejects(fn() => cms_prepare_image($fixture . '/invalid.php', 'hero', ''), CmsValidation::class);
+rejects(fn() => cms_prepare_image($fixture . '/valid.png', '../../bad', ''), CmsValidation::class);
+$prepared = cms_prepare_image($fixture . '/polyglot.jpg', 'hero', 'Campo');
+check($prepared['width'] === 640 && $prepared['height'] === 360, 'No se amplían fotos pequeñas');
+foreach ($prepared['files'] as $path) {
+    check(!str_contains(file_get_contents($path), 'APAG_PAYLOAD') && getimagesize($path)['mime'] === 'image/webp', 'Reencodificación elimina payload y metadata');
+}
+unset($prepared['files']); $default['images']['hero'] = $prepared;
+$output = cms_render($home, $default);
+check(str_contains($output, 'href="/' . $prepared['src'] . '"') && str_contains($output, 'src="/' . $prepared['src'] . '"'), 'Preload y fotografía nuevos coinciden');
+echo "OK PHP: validación, persistencia, conflictos, backup, escape de contenido, plantilla y procesamiento de imágenes\n";
+rejects(fn() => cms_album_text([], 100, true), CmsValidation::class);
+rejects(fn() => cms_album_text("Texto\nno permitido", 100), CmsValidation::class);
+rejects(fn() => cms_album_text('', 100, true), CmsValidation::class);
+rejects(fn() => cms_album_index($default['albums'], '../invalid'), CmsValidation::class);
+$album = $default['albums'][0]; $album['title'] = '<script>album</script>'; $album['photos'][0]['caption'] = '"><img src=x>';
+$albumOutput = cms_albums_markup([$album]);
+check(str_contains($albumOutput, '&lt;script&gt;album') && !str_contains($albumOutput, '<img src=x>'), 'Álbum y atributos escapados');
+check(!str_contains(cms_albums_markup([['photos' => []]]), '<details'), 'Álbumes vacíos fuera de la web');
+$revision = cms_content()['revision'];
+cms_update_content($revision, function ($current) { $current['albums'] = array_fill(0, 12, cms_schema()['albums'][0]); return $current; });
+$_POST = ['revision' => (string) ($revision + 1), 'album_title' => 'Otro álbum'];
+rejects(fn() => cms_album_action('album-save'), CmsValidation::class);
+check(cms_content()['revision'] === $revision + 1, 'Límite de álbumes no modifica datos');
+cms_update_content($revision + 1, function ($current) { $current['albums'] = [cms_schema()['albums'][0]]; $current['albums'][0]['photos'] = array_fill(0, 40, $current['albums'][0]['photos'][0]); return $current; });
+$_POST = ['revision' => (string) ($revision + 2), 'album_id' => 'miradas_del_campo', 'alt' => 'Foto nueva'];
+rejects(fn() => cms_album_action('photo-add'), CmsValidation::class);
+check(cms_content()['revision'] === $revision + 2, 'Límite de fotografías no modifica datos');
+echo "OK PHP álbumes: validación, escape, álbumes vacíos y límites de publicación\n";

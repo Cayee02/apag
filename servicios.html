@@ -4,31 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Servicios | APAG</title>
-  <meta name="description" content="Información sobre los servicios de APAG, Asociación de Productores Agrícolas del Guairá.">
+  <meta name="description" content="Servicios de APAG para productores: suelo, caña orgánica, capacitación, cumplimiento de normas, comercio justo y comercialización conjunta.">
   <meta name="theme-color" content="#063d26">
   <meta name="robots" content="noindex, nofollow">
-  <link rel="icon" type="image/png" href="./images/logo/apag.png">
+  <link rel="icon" type="image/png" href="./images/optimized/apag-icon.png">
 </head>
 <body data-page="servicios">
   %APAG_HEADER%
   <main id="contenido" class="inner-page" tabindex="-1">
     <div class="inner-heading container">
       <p class="breadcrumb"><a href="./index.html">Inicio</a> / Servicios</p>
-      <h1>Servicios</h1>
-      <p>Conoce los servicios de la asociación.</p>
+      <h1 data-cms="services.heading">Servicios</h1>
+      <p data-cms="services.intro">Conoce los servicios de la asociación.</p>
     </div>
+    <figure class="container services-field-image"><img data-cms-image="services" src="./images/optimized/maquinaria4-960.webp" srcset="./images/optimized/maquinaria4-480.webp 480w, ./images/optimized/maquinaria4-960.webp 960w, ./images/optimized/maquinaria4-1440.webp 1440w" sizes="90vw" width="960" height="720" alt="Maquinaria de cosecha y remolque junto a un cultivo de caña de azúcar" loading="lazy" decoding="async"><figcaption data-cms="services.photo_credit"></figcaption></figure>
     <section class="container section-space service-page-content" aria-labelledby="services-title">
       <div class="section-heading">
-      <h2 id="services-title">Servicios de APAG</h2>
+      <h2 id="services-title">Mucho más que producir</h2>
       <p>Información para productores e interesados.</p>
       </div>
-      <div class="content-awaiting"><div>
-      <h3>Listado oficial de servicios</h3>
-      <p class="pending-content">[CONTENIDO PENDIENTE APAG]</p>
-      <p>Para consultar información sobre los servicios, contacta directamente con la asociación.</p>
-      </div>
-      <a class="text-link" href="./contacto.html">Consultar con APAG <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
-      </div>
+      <div data-cms-services="all">%APAG_SERVICES_ALL%</div>
+    </section>
+    <section class="institutional-background"><div class="container section-space institutional-history"><div><p class="eyebrow">Certificaciones y estándares</p><h2 data-cms="services.standards_heading"></h2></div><div><div class="institutional-copy" data-cms="services.standards_body"></div><p class="standards-note">Referencias de trabajo según los programas aplicables a la organización.</p></div></div></section>
+    <section class="container section-space service-stories" aria-label="Organización y oportunidades">
+      <article class="institutional-history"><div><p class="eyebrow">Comercio justo</p><h2 data-cms="services.fair_heading"></h2></div><div class="institutional-copy" data-cms="services.fair_body"></div></article>
+      <article class="institutional-history"><div><p class="eyebrow">Comercialización conjunta</p><h2 data-cms="services.marketing_heading"></h2></div><div class="institutional-copy" data-cms="services.marketing_body"></div></article>
+      <article class="institutional-history"><div><p class="eyebrow">Trabajo interinstitucional</p><h2 data-cms="services.alliances_heading"></h2></div><div class="institutional-copy" data-cms="services.alliances_body"></div></article>
+      <article class="institutional-history"><div><p class="eyebrow">Proyectos y financiamiento</p><h2 data-cms="services.finance_heading"></h2></div><div class="institutional-copy" data-cms="services.finance_body"></div></article>
     </section>
     <section class="contact-cta" aria-labelledby="service-contact-title"><div class="container contact-cta-inner"><div><h2 id="service-contact-title">¿Tienes una consulta?</h2><p>Encuentra los teléfonos y el correo institucional de APAG.</p></div><a class="button" href="./contacto.html">Hablemos <i data-lucide="arrow-up-right" aria-hidden="true"></i></a></div></section>
   </main>

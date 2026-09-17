@@ -7,7 +7,13 @@
     "dev": "vite --host 127.0.0.1",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
-    "check": "node scripts/check-build.mjs"
+    "check": "node scripts/check-build.mjs",
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "dev:php": "npm run build && node scripts/serve-php.mjs",
+    "admin:create": "node scripts/create-admin.mjs",
+    "check:php": "node scripts/check-php.mjs",
+    "build:php": "npm run build && node scripts/package-php.mjs",
+    "check:contact": "node scripts/check-contact.mjs"
   },
   "engines": {
     "node": ">=22.12.0"
@@ -20,6 +26,7 @@
     "lucide": "^1.47.0"
   },
   "devDependencies": {
+    "sharp": "^0.35.4",
     "vite": "^8.3.0"
   }
 }
