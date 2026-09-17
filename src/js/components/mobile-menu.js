@@ -1,8 +1,8 @@
 export function initMobileMenu(scroll) {
   const toggle = document.querySelector('[data-menu-toggle]');
   const dialog = document.querySelector('[data-mobile-menu]');
-  const close = dialog.querySelector('[data-menu-close]');
   if (!toggle || !dialog || typeof dialog.showModal !== 'function') return () => {};
+  const close = dialog.querySelector('[data-menu-close]');
 
   const openMenu = () => {
     scroll.stop();
@@ -16,7 +16,10 @@ export function initMobileMenu(scroll) {
     document.body.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded', 'false');
     scroll.start();
-    toggle.focus({ preventScroll: true });
+    const focusTarget = desktop.matches
+      ? document.querySelector('.desktop-nav [aria-current="page"]')
+      : toggle;
+    focusTarget.focus({ preventScroll: true });
   };
   const desktop = window.matchMedia('(min-width: 768px)');
   const onResize = () => { if (desktop.matches && dialog.open) closeMenu(); };
@@ -27,7 +30,10 @@ export function initMobileMenu(scroll) {
   dialog.addEventListener('close', restore);
   desktop.addEventListener('change', onResize);
   return () => {
-    if (dialog.open) closeMenu();
+    if (dialog.open) {
+      closeMenu();
+      restore();
+    }
     toggle.removeEventListener('click', openMenu);
     close.removeEventListener('click', closeMenu);
     dialog.removeEventListener('close', restore);

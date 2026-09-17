@@ -1,5 +1,5 @@
 .site-header { height: var(--header-height); position: fixed; inset: 0 0 auto; z-index: 10; color: var(--green-950); background: var(--paper); border-bottom: 1px solid transparent; transition: background .25s, color .25s, border-color .25s; }
-body[data-page='inicio'] .site-header:not(.is-scrolled) { color: var(--white); background: transparent; }
+body[data-page='inicio'] .site-header:not(.is-scrolled) { color: var(--white); background: #063d26eb; }
 .site-header.is-scrolled { border-color: var(--line); }
 .header-inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
 .brand { display: inline-flex; align-items: center; gap: 13px; flex-shrink: 0; }

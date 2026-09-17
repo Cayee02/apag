@@ -6,4 +6,8 @@ p { text-wrap: pretty; }
 ::selection { background: var(--yellow); color: var(--green-950); }
 :focus-visible { outline: 3px solid var(--green-700); outline-offset: 6px; }
 .hero :focus-visible, .mobile-menu :focus-visible { outline-color: var(--yellow); }
+body[data-page='inicio'] .site-header:not(.is-scrolled) :focus-visible { outline-color: var(--yellow); }
+@media (max-width: 767px) {
+  .site-header:not(.has-menu) :focus-visible { outline-color: var(--yellow); }
+}
 a:not(.button) { text-underline-offset: .3em; }

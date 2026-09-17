@@ -86,3 +86,25 @@ Colores principales derivados de la identidad:
 --apag-green-800: #08713F;
 --apag-green-700: #168447;
 --apag-green-500: #4D973D;
+```
+
+## Desarrollo iniciado
+
+Primera entrega: base Vite, CSS y JavaScript modulares, logo oficial suministrado, encabezado, menú móvil y portada de Inicio. Las páginas internas tienen una base navegable; el contenido institucional no recibido se identifica como pendiente.
+
+```sh
+npm.cmd install
+npm.cmd run dev
+```
+
+Abrir la URL indicada por Vite (normalmente http://127.0.0.1:5173).
+
+```sh
+npm.cmd run build
+npm.cmd run check
+npm.cmd run preview
+```
+
+La compilación se genera en `dist/`. En shells donde npm no esté restringido puede usarse `npm` en lugar de `npm.cmd`.
+
+Estado y próximos pasos: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Procedencia de imágenes: [docs/ASSETS.md](docs/ASSETS.md). No se considera una entrega final de producción; faltan contenido oficial, CMS, formulario y verificación visual.

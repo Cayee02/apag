@@ -13,7 +13,7 @@ Productores e interesados que buscan conocer APAG y contactar con la asociación
 Presencia institucional de la Asociación de Productores Agrícolas del Guairá, desarrollada por Leo Systems.
 
 ## Capabilities and Constraints
-Cuatro páginas: Inicio, Servicios, Sobre Nosotros y Contacto. Desarrollo por fases. Esta entrega inicia con base técnica, navegación y portada. Autoadministración, CMS y backend de formulario pendientes.
+Cuatro páginas: Inicio, Servicios, Sobre Nosotros y Contacto. Desarrollo por fases. Base técnica, navegación, estructura de Inicio y páginas internas implementadas. Los contenidos institucionales pendientes están identificados; no se consideran aprobados ni completos. Autoadministración, CMS y backend de formulario pendientes.
 
 ## Brand Commitments
 Logo suministrado en imagenes/APAG.png. Identidad verde y amarilla, agrícola, editorial, institucional y cercana. «Cultivamos futuro.» es concepto provisional sujeto a aprobación.
