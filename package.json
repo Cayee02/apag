@@ -13,7 +13,8 @@
     "admin:create": "node scripts/create-admin.mjs",
     "check:php": "node scripts/check-php.mjs",
     "build:php": "npm run build && node scripts/package-php.mjs",
-    "check:contact": "node scripts/check-contact.mjs"
+    "check:contact": "node scripts/check-contact.mjs",
+    "check:package": "node scripts/check-package.mjs"
   },
   "engines": {
     "node": ">=22.12.0"

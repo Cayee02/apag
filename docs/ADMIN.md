@@ -123,3 +123,11 @@ npm.cmd run check:contact
 Las pruebas PHP usan cuentas, contenido y servidores temporales aislados: no modifican la cuenta real. Verifican validación, guardado, conflicto, backup, escape HTML, procesamiento de imágenes y los recorridos HTTP de acceso/edición/subida/contacto/servicios/404/contraseña/logout.
 
 QA visual del panel, Apache real y pruebas en dispositivos siguen pendientes por falta de navegador integrado disponible. No se ha desplegado ni creado una cuenta con contraseña predeterminada. El formulario está implementado y probado con SMTP local; para activarlo faltan SMTP del hosting y política aprobada. El mailto continúa como contacto directo.
+
+## Hosting confirmado: SiteGround
+
+Publicación en `https://apag-py.com/`: seguir [guia_deploy.md](../guia_deploy.md). El entry generado configura APAG_PUBLIC_DIR con su propia carpeta, por lo que se puede copiar el contenido de public/ a public_html/. app/ y storage/ quedan como hermanos privados. El paquete incluye la guía; no incluye cuenta, datos ni SMTP. Prueba adicional: `npm.cmd run check:package` (PHP loopback, distribución public_html, datos aislados; no sustituye Apache/NGINX/SMTP reales).
+
+## Estado local auditado antes del deploy
+
+El 18 de septiembre se comprobó cuenta local existente, contenido revisión 17, privacidad/misión/visión aprobadas en el panel, ocho servicios, dos álbumes/siete fotos y seis archivos en media. SMTP sin configurar. Estos datos no se incluyen en el paquete: migrar content.json, cuenta elegida y media para conservarlos. No recrear ni resetear automáticamente la cuenta. El estado de carga inicial descrito arriba es histórico; situación actual: [PREDEPLOY_REVIEW.md](PREDEPLOY_REVIEW.md).

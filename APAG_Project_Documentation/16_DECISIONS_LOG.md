@@ -154,3 +154,15 @@ Opciones:
 **Solicitud:** mejorar Inicio con animaciones al recorrer la página y una caña de azúcar descendente.
 
 **Implementación:** revelados individuales y por grupo con GSAP; SVG original de caña en el margen derecho, descenso/giro/hojas vinculados al scroll. Sin interacción, con tamaño responsive y preferencia de movimiento reducido. Se mantiene la portada de una sola fotografía y la galería editorial aprobada. Build/check aprobados; QA visual pendiente por navegador no disponible.
+
+## D-023 — Completar sitemap, robots y accesibilidad
+
+**Solicitud:** crear /sitemap.xml y /robots.txt, y avanzar con accesibilidad.
+
+**Implementación:** ambos archivos generados en cada build; cinco URLs locales de prueba hasta configurar el dominio definitivo. Robots enlaza al mapa y excluye panel/API sin impedir leer el noindex del borrador. Se refuerzan controles/foco/colores forzados y se añade verificación estática de etiquetas, alt, landmarks y contraste. No se activa la indexación ni se afirma conformidad WCAG completa; navegador/lector de pantalla y dominio siguen pendientes.
+
+## D-024 — Preparar apag-py.com en SiteGround
+
+**Solicitud:** identificar pendientes y crear una guía completa de despliegue.
+
+**Implementación:** guia_deploy.md con fuentes oficiales, estructura public_html/app/storage, cuenta, SMTP, privacidad, DNS/SSL/caché, pruebas, backups y actualización. Dominio definitivo configurado localmente con indexación aún desactivada. Entry generado reconoce su carpeta pública; check del paquete con distribución public_html aprobado junto a los checks existentes. No se publicó ni modificó DNS/correo real; falta ejecutar y validar los pasos del hosting.

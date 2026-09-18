@@ -120,3 +120,17 @@ Build, checks frontend/PHP/formulario y publicación HTTP aprobados. Cuenta real
 ## Animaciones sutiles en Inicio
 
 Añadidos revelados por elemento/grupo y una caña SVG original que desciende y gira según el scroll. Nuevo módulo `src/js/animations/sugar-cane.js`, coordinado después del preloader y con limpieza mediante matchMedia/HMR. La decoración se limita al margen; admite móvil y movimiento reducido. Build/check aprobados; revisión visual pendiente por indisponibilidad del navegador integrado.
+
+## Sitemap, robots y accesibilidad — 18 de septiembre de 2026
+
+Generación permanente de sitemap XML y robots, con URLs locales de prueba mientras falta APAG_SITE_URL, sin habilitar indexación. Reglas panel/API adaptadas a subdirectorio; cinco páginas públicas. Nuevo check de accesibilidad incorporado al check frontend, bordes/checkbox/foco/desplazamiento reforzados y retorno de foco del menú corregido para páginas auxiliares. Build/check aprobados. Configuración y límites documentados en SEO_ACCESSIBILITY.md.
+
+Corrección del fallo de estilos en desarrollo: carga del CSS de accesibilidad mediante import ES desde main.js, conservando el orden de estilos. Vite en 5173 comprobado por HTTP antes/después (500 → 200); compilación y checks aprobados.
+
+## Preparación de publicación en SiteGround
+
+Dominio apag-py.com recibido y configurado en el build local con noindex durante revisión. Creada guia_deploy.md e incluida en el paquete. Entry PHP reconoce su propia carpeta pública, permitiendo public_html sin cambiar bootstrap. Nuevo check:package verifica esa distribución con CMS y datos aislados; build/check/frontend/PHP/formulario/paquete aprobados. La guía indica adaptaciones de HTTPS/caché y traslado seguro del contenido/cuenta; no se ha desplegado el sitio ni usado SMTP externo.
+
+## Auditoría del roadmap y proyecto antes de deploy
+
+Verificado código/alcance/QA/entrega, build y checks; npm/Composer de producción sin avisos de vulnerabilidad conocidos. Detectado desfase documental: cuenta y privacidad/misión/visión ya activadas/aprobadas en CMS local (rev.17). Documentación corregida y creado PREDEPLOY_REVIEW.md; datos/credenciales/aprobaciones preservados. La copia privada de contenido/media es necesaria para reproducir el estado local en hosting. Sin SMTP y sin validación visual/SiteGround; no se han ejecutado publicaciones externas.

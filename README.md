@@ -145,3 +145,13 @@ El envío real requiere configurar el correo del hosting y publicar la política
 El texto propuesto recibido se cargó en Inicio, Sobre APAG, Servicios y el panel, con ocho servicios y seis pilares. Misión/visión se muestran como propuestas y se aprueban por separado desde Sobre APAG. Fuente: `src/data/institutional.json`.
 
 La página `galeria.html`, accesible desde los menús, muestra álbumes administrables. Incluye cuatro fotos de maquinaria compartidas por el cliente y mejoradas con IA, optimizadas a WebP. El panel permite añadir más fotos y álbumes. Portada original y galería editorial de Inicio conservadas. Uso y carga inicial: [docs/ADMIN.md](docs/ADMIN.md).
+
+## Sitemap, robots y accesibilidad
+
+El build genera `/sitemap.xml` y `/robots.txt`. Sin dominio configurado se usan URLs locales de prueba; definir `APAG_SITE_URL` antes de publicar y activar `APAG_INDEXABLE` tras aprobación. El check incluye etiquetas/alt/landmarks y contraste de texto/foco/bordes. Configuración, límites y revisión manual pendiente: [docs/SEO_ACCESSIBILITY.md](docs/SEO_ACCESSIBILITY.md).
+
+## Publicación en SiteGround
+
+Dominio confirmado: `https://apag-py.com/`. Guía completa: [guia_deploy.md](guia_deploy.md), también incluida en el paquete PHP. El entry generado reconoce su carpeta pública aunque se instale como `public_html`; PHP/datos permanecen fuera de ella. `npm.cmd run check:package` prueba esa distribución con datos aislados. SMTP, cuenta del panel, política, DNS/SSL/caché y validación real siguen pendientes de configurar en hosting.
+
+Auditoría antes de publicación y pendientes reales: [docs/PREDEPLOY_REVIEW.md](docs/PREDEPLOY_REVIEW.md). Privacidad/misión/visión ya aprobadas en CMS local y cuenta existente; necesitan migración al hosting. SMTP todavía sin configurar.

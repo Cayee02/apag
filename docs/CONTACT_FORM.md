@@ -10,7 +10,7 @@ Los mensajes se envían con PHPMailer 7.1.1 por SMTP. El remitente es una direcc
 
 ## Estado de activación
 
-El usuario eligió **correo del hosting** y confirmó que **la política de privacidad sigue pendiente**. No se ha enviado correo a la cuenta real de APAG. El formulario permanece sin envío habilitado hasta tener configuración SMTP válida y política publicada/aprobada; teléfonos y correo directo siguen disponibles.
+El usuario eligió **correo del hosting**. Auditoría del 18 de septiembre de 2026: **la política está aprobada/publicada en el CMS local**, pero SMTP sigue sin configurar y la API informa ready=false. Migrar el contenido guardado y configurar correo en SiteGround para habilitar envíos. Las pruebas no enviaron correo externo; teléfonos/correo directo siguen disponibles.
 
 El destino inicial usa el correo institucional del panel: `asociacion.prod.agric.guaira@gmail.com`. Confirmarlo antes de producción. `mail_to` permite un destino fijo privado independiente del correo visible.
 
@@ -47,7 +47,7 @@ Con el servidor local activo, el archivo privado se lee en cada request; cambios
 
 En `/admin?section=privacy`, cargar el texto aprobado por APAG y marcar «Publicar este texto revisado y aprobado por APAG». Guardar sin marcar conserva un borrador privado: visitantes siguen viendo el placeholder, y el formulario continúa sin habilitarse. No se permite publicar el placeholder como política aprobada.
 
-La página `privacidad.html` está enlazada desde el formulario y footer. No se generó una política legal ni se inventaron plazos, bases legales o compromisos institucionales. Ese contenido debe ser suministrado/revisado por APAG.
+La página `privacidad.html` está enlazada desde el formulario y footer. Su texto/aprobación reside en el CMS guardado, no en los valores iniciales del paquete. La revisión y aprobación institucional del contenido corresponde a APAG.
 
 Cada formulario contiene la versión del título/texto de política, vinculada al token de envío. Si cambia antes del envío, el backend rechaza esa aceptación y solicita leer/aceptar la nueva versión. Cambiar otros datos del sitio no invalida la política.
 

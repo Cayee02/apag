@@ -4,7 +4,7 @@ Vite genera los metadatos a partir del título y descripción de cada página y 
 
 ## Configuración
 
-Copiar `.env.example` a `.env`. Definir `APAG_SITE_URL` con la URL pública definitiva, incluido subdirectorio y sin query, fragmento ni credenciales. No se incluye un dominio ficticio en el sitio. Mientras no se configure, no hay canonical, URLs sociales absolutas ni sitemap.
+Dominio definitivo confirmado y configurado localmente: `APAG_SITE_URL=https://apag-py.com/`. La URL debe incluir subdirectorio si aplica, sin query, fragmento ni credenciales. Si se vacía, canonical/URLs sociales se omiten, pero sitemap/robots de prueba se generan con URLs locales. Guía actual: [SEO_ACCESSIBILITY.md](SEO_ACCESSIBILITY.md).
 
 Con URL configurada se añaden canonical, imagen social del atardecer, logo absoluto, WebSite y `sitemap.xml` con las cinco páginas principales, incluida Galería. La plantilla 404 queda excluida y mantiene noindex.
 
@@ -22,4 +22,4 @@ La estructura Organization se limita a información disponible; referencia: [doc
 
 El render PHP actualiza correo y teléfonos de Organization al guardar contacto en el panel. Canonical, URLs sociales y sitemap siguen dependiendo del dominio/configuración del build.
 
-Pendiente antes de publicar: dominio, aprobación de textos y fotografías, datos institucionales completos, QA visual, mediciones de rendimiento y configuración del hosting. Estos metadatos no garantizan resultados enriquecidos ni posición en búsquedas.
+Pendiente antes de publicar: migración de las aprobaciones y contenido local, aceptación final de textos/fotos, QA visual, mediciones, configuración SiteGround y activación deliberada de indexación. WhatsApp/redes requieren datos confirmados. PostalAddress en JSON-LD todavía no se implementó; es una mejora pendiente mencionada en el brief. Los metadatos no garantizan resultados enriquecidos ni posición en búsquedas. Estado comprobado: [PREDEPLOY_REVIEW.md](PREDEPLOY_REVIEW.md).

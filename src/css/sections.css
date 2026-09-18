@@ -1,4 +1,5 @@
 .section-space { padding-block: clamp(65px, 8vw, 110px); }
+.service-page-content { padding-top: clamp(40px, 5vw, 64px); }
 .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 35px; margin-bottom: 44px; }
 .section-heading h2 { color: var(--green-950); max-width: 22ch; }
 .section-heading > p { max-width: 36ch; color: var(--muted); }

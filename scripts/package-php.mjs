@@ -17,7 +17,12 @@ await cp('vendor', resolve(directory, 'app/vendor'), { recursive: true });
 await cp('composer.json', resolve(directory, 'composer.json'));
 await cp('composer.lock', resolve(directory, 'composer.lock'));
 await cp('server/admin-assets', resolve(directory, 'public/admin-assets'), { recursive: true });
-await writeFile(resolve(directory, 'public/index.php'), '<?php\ndeclare(strict_types=1);\nrequire dirname(__DIR__) . \'/app/bootstrap.php\';\ncms_handle_request();\n');
+await writeFile(resolve(directory, 'public/index.php'), '<?php\ndeclare(strict_types=1);\nif (!getenv(\'APAG_PUBLIC_DIR\')) putenv(\'APAG_PUBLIC_DIR=\' . __DIR__);\nrequire dirname(__DIR__) . \'/app/bootstrap.php\';\ncms_handle_request();\n');
 await cp('server/apache.htaccess', resolve(directory, 'public/.htaccess'));
 await writeFile(resolve(directory, 'LEEME.txt'), await readFile('docs/ADMIN.md', 'utf8'));
+await cp('guia_deploy.md', resolve(directory, 'guia_deploy.md'));
+await mkdir(resolve(directory, 'docs'), { recursive: true });
+for (const name of ['ADMIN.md', 'CONTACT_FORM.md', 'SEO_ACCESSIBILITY.md', 'PREDEPLOY_REVIEW.md', 'ROADMAP_STATUS.md']) {
+  await cp(resolve('docs', name), resolve(directory, 'docs', name));
+}
 console.log('Paquete PHP generado en dist-php/. La raíz pública del hosting debe ser dist-php/public/.');

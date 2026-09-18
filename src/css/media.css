@@ -11,10 +11,9 @@
 .field-gallery figcaption span { font-family: var(--font-display); font-weight: 500; font-size: clamp(1.2rem, 2vw, 1.75rem); line-height: 1.2; letter-spacing: -.02em; }
 .field-gallery figcaption small { color: #dce7df; font-size: .75rem; }
 .gallery-note { font-size: .8125rem; color: var(--muted); margin-top: 20px; }
-.about-field-image, .services-field-image { margin-block: 0 80px; }
-.about-field-image img, .services-field-image img { width: 100%; height: clamp(250px, 33vw, 450px); object-fit: cover; object-position: 65% 35%; }
-.services-field-image img { object-position: 43% 48%; }
-.about-field-image figcaption, .services-field-image figcaption { font-size: .8125rem; color: var(--muted); margin-top: 14px; }
+.about-field-image { margin-block: 0 80px; }
+.about-field-image img { width: 100%; height: clamp(250px, 33vw, 450px); object-fit: cover; object-position: 65% 35%; }
+.about-field-image figcaption { font-size: .8125rem; color: var(--muted); margin-top: 14px; }
 @media (hover: hover) and (prefers-reduced-motion: no-preference) { .field-gallery figure:hover img { transform: scale(1.035); } }
 @media (max-width: 1024px) { .field-gallery { grid-template-rows: repeat(2, 220px); } }
 @media (max-width: 767px) {
@@ -23,6 +22,6 @@
   .field-gallery .gallery-feature { height: 390px; }
   .field-gallery figcaption { inset: auto 22px 22px; }
   .field-gallery figcaption span { font-size: 1.4rem; }
-  .about-field-image, .services-field-image { margin-bottom: 60px; }
+  .about-field-image { margin-bottom: 60px; }
 }
 @media (prefers-reduced-motion: reduce) { .field-gallery img { transition: none; } }

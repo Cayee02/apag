@@ -1,4 +1,5 @@
 export const pageFiles = ['index.html', 'servicios.html', 'nosotros.html', 'galeria.html', 'contacto.html'];
+export const previewSiteUrl = 'http://127.0.0.1:8080/';
 
 const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
 const decodeHtml = (value) => value.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>');
@@ -22,14 +23,17 @@ export function pageUrl(settings, file) {
 
 export function createRobots(settings) {
   // Crawlers must be able to read the draft's noindex metadata.
+  const baseUrl = settings.baseUrl || previewSiteUrl;
+  const prefix = new URL(baseUrl).pathname.replace(/\/$/, '');
   return 'User-agent: *\nAllow: /\n' +
-    (settings.baseUrl ? `\nSitemap: ${new URL('sitemap.xml', settings.baseUrl).href}\n` : '');
+    `Disallow: ${prefix}/admin$\nDisallow: ${prefix}/admin/\nDisallow: ${prefix}/api/\n` +
+    `\nSitemap: ${new URL('sitemap.xml', baseUrl).href}\n`;
 }
 
 export function createSitemap(settings) {
-  if (!settings.baseUrl) return '';
+  const sitemapSettings = { ...settings, baseUrl: settings.baseUrl || previewSiteUrl };
   return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
-    pageFiles.map((file) => `  <url><loc>${escapeHtml(pageUrl(settings, file))}</loc></url>`).join('\n') + '\n</urlset>\n';
+    pageFiles.map((file) => `  <url><loc>${escapeHtml(pageUrl(sitemapSettings, file))}</loc></url>`).join('\n') + '\n</urlset>\n';
 }
 
 export function addSeoMetadata(html, file, settings, contact) {

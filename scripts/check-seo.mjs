@@ -9,8 +9,11 @@ assert(draftHtml.includes('content="noindex, nofollow"'));
 assert(!draftHtml.includes('rel="canonical"'));
 assert(!draftHtml.includes('og:url'));
 assert(!draftHtml.includes('og:image"'));
-assert.equal(createSitemap(draft), '');
-assert.equal(createRobots(draft), 'User-agent: *\nAllow: /\n');
+assert.equal((createSitemap(draft).match(/<loc>/g) ?? []).length, 5);
+assert(createSitemap(draft).includes('http://127.0.0.1:8080/'));
+assert(createRobots(draft).includes('Sitemap: http://127.0.0.1:8080/sitemap.xml'));
+assert(createRobots(draft).includes('Disallow: /admin$'));
+assert(createRobots(draft).includes('Disallow: /api/'));
 assert.equal((draftHtml.match(/property="og:title"/g) ?? []).length, 1);
 assert.equal((draftHtml.match(/name="robots"/g) ?? []).length, 1);
 assert(draftHtml.includes('APAG &amp; comunidad'));
@@ -43,7 +46,13 @@ assert.equal((sitemap.match(/<loc>/g) ?? []).length, 5);
 assert(sitemap.includes('galeria.html'));
 assert(!sitemap.includes('404.html'));
 assert(createRobots(production).includes('Sitemap: https://example.test/apag/sitemap.xml'));
-for (const [settings, expected] of [[draft, ['robots.txt']], [production, ['robots.txt', 'sitemap.xml']]]) {
+assert(createRobots(production).includes('Disallow: /apag/admin/'));
+assert(createRobots(production).includes('Disallow: /apag/api/'));
+assert(!createRobots(production).includes('127.0.0.1'));
+assert(!sitemap.includes('127.0.0.1'));
+assert(!sitemap.includes('privacidad.html'));
+assert(!sitemap.includes('/admin'));
+for (const [settings, expected] of [[draft, ['robots.txt', 'sitemap.xml']], [production, ['robots.txt', 'sitemap.xml']]]) {
   const emitted = [];
   seoPlugin(settings, () => contact).generateBundle.call({ emitFile: (asset) => emitted.push(asset.fileName) });
   assert.deepEqual(emitted, expected);

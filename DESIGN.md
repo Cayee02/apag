@@ -130,3 +130,7 @@ Revelado suave de títulos, columnas, pilares, servicios y fotografías al entra
 Una caña de azúcar SVG original desciende por el margen derecho entre la presentación de APAG y el final de la galería editorial. Su giro y el movimiento de las hojas responden al progreso del scroll, sin reproducción continua. La franja decorativa se recorta al ancho del margen para evitar cubrir textos; no recibe clics ni foco. Tamaño responsive de 32–64px. Oculta sin JavaScript y con movimiento reducido; limpieza de GSAP al cambiar la preferencia o recargar módulos. La fotografía única de portada y composición de la galería se conservan.
 
 Revisión de código y build aprobados; navegador integrado no disponible, por lo que la revisión visual sigue pendiente.
+
+## Accesibilidad — 18 de septiembre de 2026
+
+Se conserva la identidad. Se refuerzan discretamente los bordes de campos (#748b7a), el checkbox (24px) y la altura de enlaces del pie (mínimo 24px). Se reserva espacio de scroll para el encabezado fijo y se mantiene un contorno interior en los álbumes. El menú puede desplazarse y restaura el foco también en páginas auxiliares. Colores forzados conserva contornos/bordes del sistema. Comprobaciones estáticas de etiquetas, alternativas y contraste aprobadas; no se certifica WCAG sin QA real en navegador y lector de pantalla.

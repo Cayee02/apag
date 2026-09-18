@@ -108,3 +108,29 @@ Sharp generó variantes WebP sin ampliar fotos pequeñas; srcset usa sus dimensi
 Build y check frontend aprobados: siete páginas, recursos, enlaces, anclajes, referencias ARIA, preloader y SEO. Revelado de contenido ampliado y caña SVG integrada únicamente en Inicio. Código revisado: preferencia de movimiento reducido, limpieza de animaciones/ScrollTriggers, cálculo responsive tras refresh y franja sin interacción recortada al margen. No se oculta contenido de lectura sin JavaScript.
 
 El navegador integrado reporta «No browser is available» y lista vacía. No se verificaron visualmente los tiempos, el recorrido real, móvil ni la interacción con rueda/táctil; esta limitación sigue abierta.
+
+## Sitemap, robots y accesibilidad — 18 de septiembre de 2026
+
+Build/check frontend aprobados. Ambos archivos se generan incluso sin dominio: sitemap de prueba con cinco URLs absolutas locales; producción/subcarpeta comprobadas con dominio reservado de test, sin URLs locales. Robots enlaza al sitemap y excluye panel/API con prefijos correspondientes; el borrador conserva noindex. Errores, panel y privacidad pendiente fuera del sitemap.
+
+Nuevo check estático integrado para idioma, landmarks, destino enfocable del salto, alt, labels y nombres/tipos de botones. Contraste calculado: texto de paleta >=4.5:1 y foco/borde de campos >=3:1. No evalúa contraste de fotografías, dimensiones renderizadas ni uso real con teclado/lector. Navegador integrado nuevamente no disponible; no hubo Lighthouse, screenshot ni auditoría WCAG completa. Guía: SEO_ACCESSIBILITY.md.
+
+HTTP local PHP: GET /sitemap.xml y /robots.txt responden 200 con application/xml y text/plain respectivamente; XML parseado con cinco URLs. Inicio conserva noindex. Paquete PHP actualizado con ambos archivos.
+
+Corrección CSS en Vite: reproducido HTTP 500 al solicitar /src/css/main.css aunque accessibility.css existe. Se retiró ese @import y se importó accessibility.css directamente desde src/js/main.js después del CSS principal. El mismo servidor Vite, sin reiniciarlo, responde ahora 200 para ambos CSS y main.js. Build/check aprobados; paquete PHP actualizado.
+
+## Preparación SiteGround — apag-py.com
+
+URL confirmada configurada en .env local, sin activar indexación. Build PHP, check frontend, check PHP, formulario HTTP/SMTP local y nuevo check del paquete aprobados. Sitemap/robots/canonical usan https://apag-py.com/ y el sitemap contiene cinco URLs sin localhost.
+
+El nuevo check copia el paquete a un directorio temporal con public_html/ y app/ hermanos, lo sirve por PHP sin APAG_PUBLIC_DIR heredado y comprueba Inicio/CSS/Galería/panel/sitemap/robots, protección de rutas privadas y 404. Storage se crea fuera de public_html; configuración SMTP/cuentas locales ausentes del paquete. Datos aislados y directorio temporal eliminado tras la prueba. No se hicieron cambios DNS, publicaciones ni envíos externos.
+
+Guía creada con referencias oficiales SiteGround actuales, SSL/DNS/caché/SMTP/cuenta/privacidad y mantenimiento. Apache/NGINX, TLS, DNS, correo real y QA visual siguen sin validación en el hosting.
+
+## Auditoría completa antes de deploy
+
+Build PHP, check frontend/PHP/contacto/paquete aprobados nuevamente. Auditorías autorizadas npm --omit=dev y Composer --locked --no-dev completadas: cero vulnerabilidades conocidas reportadas y sin paquetes PHP abandonados. No es auditoría integral de seguridad.
+
+Snapshot real revisión 17: cuenta existente, privacidad/misión/visión aprobadas, ocho servicios, dos álbumes/siete fotos, cuatro espacios de imagen editados y seis archivos media. Veinticuatro rutas fotográficas comprobadas, cero faltantes. HTTP de seis páginas responde 200, sin placeholders/rótulos pendientes y con noindex. API ready=false, SMTP sin configurar. No se alteraron credenciales/aprobaciones/contenido; pruebas con datos aislados y sin correo externo. Navegador integrado no disponible, sin QA visual ni mediciones.
+
+Roadmap/guía corregidos para reflejar el CMS real; informe detallado: PREDEPLOY_REVIEW.md. Pendientes: migración de datos, SMTP, configuración/validación SiteGround, QA/mediciones, indexación tras aprobación y entrega operativa.

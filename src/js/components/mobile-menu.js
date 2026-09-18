@@ -17,7 +17,7 @@ export function initMobileMenu(scroll) {
     toggle.setAttribute('aria-expanded', 'false');
     scroll.start();
     const focusTarget = desktop.matches
-      ? document.querySelector('.desktop-nav [aria-current="page"]')
+      ? document.querySelector('.desktop-nav [aria-current="page"]') || document.querySelector('.desktop-nav a')
       : toggle;
     focusTarget.focus({ preventScroll: true });
   };
@@ -38,5 +38,7 @@ export function initMobileMenu(scroll) {
     close.removeEventListener('click', closeMenu);
     dialog.removeEventListener('close', restore);
     desktop.removeEventListener('change', onResize);
+    toggle.hidden = true;
+    document.querySelector('[data-header]').classList.remove('has-menu');
   };
 }

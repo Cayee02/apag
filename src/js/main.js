@@ -5,6 +5,7 @@ import '@fontsource/inter/latin-500.css';
 import '@fontsource/inter/latin-600.css';
 import 'lenis/dist/lenis.css';
 import '../css/main.css';
+import '../css/accessibility.css';
 import { createIcons, ArrowUpRight, ArrowRight, ArrowDown, Menu, X, Sprout, MapPin, UsersRound, Phone, Mail } from 'lucide';
 import { initSmoothScroll } from './core/lenis.js';
 import { initHeader } from './components/header.js';

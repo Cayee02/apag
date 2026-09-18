@@ -51,3 +51,4 @@ assert(!home.includes('data-hero-carousel'), 'El carrusel de portada fue retirad
 console.log('OK contrato de diseño conservado en producción');
 await import('./check-preloader.mjs');
 await import('./check-seo.mjs');
+await import('./check-accessibility.mjs');

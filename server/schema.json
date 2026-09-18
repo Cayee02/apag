@@ -184,26 +184,26 @@
     "contact.primary_label": {
       "group": "contact",
       "label": "Teléfono principal: texto visible",
-      "value": "0989 148 592",
+      "value": "+595 995 654544",
       "max": 50
     },
     "contact.primary_number": {
       "group": "contact",
       "label": "Teléfono principal: número internacional",
-      "value": "+595989148592",
+      "value": "+595995654544",
       "max": 16,
       "kind": "phone"
     },
     "contact.secondary_label": {
       "group": "contact",
       "label": "Teléfono alternativo: texto visible",
-      "value": "0986 156 489",
+      "value": "+595 981 482592",
       "max": 50
     },
     "contact.secondary_number": {
       "group": "contact",
       "label": "Teléfono alternativo: número internacional",
-      "value": "+595986156489",
+      "value": "+595981482592",
       "max": 16,
       "kind": "phone"
     },

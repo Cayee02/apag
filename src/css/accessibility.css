@@ -1,0 +1,12 @@
+/* Reserve space for keyboard focus beneath the fixed navigation. */
+html { scroll-padding-top: calc(var(--header-height) + 24px); scroll-padding-bottom: 24px; }
+:where(a, button, input, textarea, summary, [tabindex]) { scroll-margin-block: calc(var(--header-height) + 24px) 24px; }
+.footer-column a, .footer-inner a { display: inline-block; min-height: 24px; }
+.menu-contact a { min-height: 32px; }
+.mobile-menu { overflow-y: auto; overscroll-behavior: contain; }
+.album summary:focus-visible { outline-offset: -6px; }
+@media (forced-colors: active) {
+  :focus-visible { outline: 3px solid Highlight !important; outline-offset: 4px; }
+  .button, .menu-toggle, .menu-close, .form-field input, .form-field textarea { border: 1px solid ButtonText; }
+  .scroll-cane-track { display: none; }
+}
