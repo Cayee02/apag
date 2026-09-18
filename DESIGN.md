@@ -122,3 +122,11 @@ El hero conserva una sola foto del atardecer y cambia al título suministrado de
 Inicio incluye seis pilares, servicios reales del texto propuesto, una sección de producción orgánica con foto de carga de caña y un bloque de capacitación. Servicios desarrolla estándares, comercio justo, comercialización, trabajo interinstitucional y financiamiento en filas editoriales con dos columnas y separación amplia; móvil apilado. Sobre APAG usa la foto del grupo y textos de presentación/propósito. Los párrafos tienen 24px de separación y lectura de hasta 65ch.
 
 Misión y visión muestran un rótulo amarillo «Propuesta pendiente de aprobación por APAG». El panel permite aprobarlas por separado. Las cuatro fotos nuevas se atribuyen al cliente y a la mejora con IA; álbum en Galería, sin añadir otra galería a Inicio. El cierre usa el CTA institucional suministrado conservando un solo bloque. No hubo revisión visual web: los originales se inspeccionaron como imágenes y se aprobaron build/pruebas/HTTP, con navegador aún no disponible.
+
+## Movimiento de Inicio — caña de azúcar
+
+Revelado suave de títulos, columnas, pilares, servicios y fotografías al entrar en pantalla: 18px de desplazamiento, opacidad inicial 0.72 y duración 0.85s, con separación de 70ms entre elementos de un grupo. Cada elemento se revela una vez y recupera sus estilos originales.
+
+Una caña de azúcar SVG original desciende por el margen derecho entre la presentación de APAG y el final de la galería editorial. Su giro y el movimiento de las hojas responden al progreso del scroll, sin reproducción continua. La franja decorativa se recorta al ancho del margen para evitar cubrir textos; no recibe clics ni foco. Tamaño responsive de 32–64px. Oculta sin JavaScript y con movimiento reducido; limpieza de GSAP al cambiar la preferencia o recargar módulos. La fotografía única de portada y composición de la galería se conservan.
+
+Revisión de código y build aprobados; navegador integrado no disponible, por lo que la revisión visual sigue pendiente.

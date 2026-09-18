@@ -31,3 +31,5 @@ Próximas tareas: revisar/aprobar la propuesta institucional y recibir datos de 
 Contenido recibido: propuesta institucional aplicada en Inicio/Sobre APAG/Servicios y ocho servicios cargados también al CMS local. Misión/visión pendientes, con aprobación independiente en el panel. Estándares tratados como referencias de trabajo; no se afirma certificación vigente. Cuatro fotos del cliente mejoradas con IA incorporadas y optimizadas. Fuente y carga reproducible: `src/data/institutional.json` y [ADMIN.md](ADMIN.md). Falta revisión final del cliente, datos de WhatsApp/redes, política y hosting.
 
 La validación visual sigue pendiente porque no hay navegador integrado disponible en esta sesión. No se marca completa ninguna fase que dependa de esa comprobación o de datos no recibidos.
+
+Movimiento de Inicio ampliado: revelados de textos/fotos y caña SVG descendente vinculada al scroll, con tamaño responsive y reduced motion. Implementado y compilado; recorrido y tiempos pendientes de QA visual.

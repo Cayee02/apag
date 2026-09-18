@@ -47,8 +47,12 @@
 ## Fotografías de maquinaria del cliente
 
 - Cuatro archivos suministrados por el usuario en `public/images/hero/`: `Maquinaria.png` (primera imagen, no se encontró `Maquinaria1`), `Maquinaria2.png`, `Maquinaria3.png` y `Maquinaria4.png`.
-- El usuario indica que proceden del cliente y fueron mejoradas con ayuda de ChatGPT antes de compartirlas. Se conserva esa procedencia y su carácter de imágenes mejoradas con IA en captions y álbum; no se conocen autor, fecha ni lugar exactos.
+- El usuario indica que proceden del cliente y fueron mejoradas con ayuda de ChatGPT antes de compartirlas. La procedencia se conserva en este registro interno; por petición del usuario se retiró esa indicación de las leyendas públicas; no se conocen autor, fecha ni lugar exactos.
 - Primera imagen: tractor verde de frente, 1254 × 1254 px. Segunda: grupo junto a tractor/rastra, 1254 × 1254 px. Tercera: carga de caña con tractor/remolque, 1448 × 1086 px. Cuarta: maquinaria de cosecha/remolque junto a caña, 1448 × 1086 px. No se identifica a las personas ni se infiere su cargo.
 - Variantes `maquinaria1` a `maquinaria4` en `public/images/optimized/`, generadas por el script existente. Anchos solicitados 480/960/1440 px, sin ampliar: las dos primeras tienen máximo real 1254 px aunque la variante se llame `-1440.webp`. El srcset usa el ancho real.
 - Uso: álbum «Maquinaria y trabajo de campo» con las cuatro fotos; Maquinaria2 en Sobre APAG, Maquinaria3 en producción orgánica de Inicio, Maquinaria4 en Servicios. Portada y composición de la galería editorial previa conservadas.
 - Solo se cambian dimensiones/compresión WebP en esta entrega. No se altera el contenido visual ni se modifican los PNG originales. Versiones originales revisadas como imágenes; composición web pendiente de navegador.
+
+## Caña decorativa de Inicio
+
+Ilustración vectorial original creada en código, integrada en `index.html`. Tallo segmentado, nudos y hojas en verdes de la identidad; sin imágenes externas ni recursos raster adicionales. SVG decorativo sin significado informativo, oculto a tecnologías de asistencia. Movimiento vinculado al scroll con GSAP/ScrollTrigger.

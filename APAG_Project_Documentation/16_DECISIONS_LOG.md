@@ -148,3 +148,9 @@ Opciones:
 **Implementación:** hero de tres líneas y botones suministrados; presentación, seis pilares, orgánica, capacitación y CTA en Inicio; contenido completo de Sobre APAG y áreas de Servicios; ocho servicios en panel. Fotos optimizadas, álbum de cuatro imágenes del cliente y fotos contextuales. Se conserva foto de portada, galería editorial y página Galería independiente. Aprobaciones institucionales separadas, párrafos editables y valores iniciales sincronizados con el build. CMS local cargado bajo revisión/bloqueo y backup, preservando contacto/privacidad/álbumes previos.
 
 **Verificación:** build/checks frontend/PHP/formulario y HTTP real local aprobados. Fotos originales inspeccionadas; versiones WebP sin ampliación. No se enviaron emails externos. Contenido final/misión/visión, política, SMTP del hosting, QA visual y producción pendientes.
+
+## D-022 — Animaciones sutiles de Inicio y caña decorativa
+
+**Solicitud:** mejorar Inicio con animaciones al recorrer la página y una caña de azúcar descendente.
+
+**Implementación:** revelados individuales y por grupo con GSAP; SVG original de caña en el margen derecho, descenso/giro/hojas vinculados al scroll. Sin interacción, con tamaño responsive y preferencia de movimiento reducido. Se mantiene la portada de una sola fotografía y la galería editorial aprobada. Build/check aprobados; QA visual pendiente por navegador no disponible.

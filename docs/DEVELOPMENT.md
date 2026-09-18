@@ -116,3 +116,7 @@ Propuesta recibida cargada en `src/data/institutional.json`, schema/CMS y págin
 Cuatro fotos del cliente mejoradas con ayuda de ChatGPT según el usuario: álbum de maquinaria, imagen de grupo en Sobre APAG, carga de caña en Inicio y cosecha en Servicios. Optimización Sharp sin alterar PNG, srcset con dimensiones reales. La portada original y la composición editorial permanecen. Carga local con backup conserva datos de contacto, privacidad y álbumes previos; los nuevos valores iniciales hacen que el paquete público también muestre el texto recibido.
 
 Build, checks frontend/PHP/formulario y publicación HTTP aprobados. Cuenta real, aprobación final de contenido/misión/visión, política, SMTP del hosting y QA visual/producción siguen pendientes.
+
+## Animaciones sutiles en Inicio
+
+Añadidos revelados por elemento/grupo y una caña SVG original que desciende y gira según el scroll. Nuevo módulo `src/js/animations/sugar-cane.js`, coordinado después del preloader y con limpieza mediante matchMedia/HMR. La decoración se limita al margen; admite móvil y movimiento reducido. Build/check aprobados; revisión visual pendiente por indisponibilidad del navegador integrado.

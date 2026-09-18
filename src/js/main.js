@@ -11,6 +11,7 @@ import { initHeader } from './components/header.js';
 import { initMobileMenu } from './components/mobile-menu.js';
 import { initHero } from './animations/hero.js';
 import { initRevealAnimations } from './animations/reveal.js';
+import { initSugarCane } from './animations/sugar-cane.js';
 import { initPreloader } from './components/preloader.js';
 import { initFieldLines } from './animations/field-lines.js';
 import { initMagneticButtons } from './animations/magnetic.js';
@@ -21,7 +22,7 @@ createIcons({ icons: { ArrowUpRight, ArrowRight, ArrowDown, Menu, X, Sprout, Map
 const scroll = initSmoothScroll();
 const cleanups = [initHeader(), initMobileMenu(scroll)];
 cleanups.push(initPreloader(() => {
-  cleanups.push(initHero(), initRevealAnimations(), initFieldLines(), initMagneticButtons(), initContactForm(), initPhotoViewer(scroll));
+  cleanups.push(initHero(), initRevealAnimations(), initSugarCane(), initFieldLines(), initMagneticButtons(), initContactForm(), initPhotoViewer(scroll));
 }));
 const skipLink = document.querySelector('.skip-link');
 const focusContent = () => document.querySelector('#contenido').focus({ preventScroll: true });

@@ -102,3 +102,9 @@ Misión/visión: dos rótulos de propuesta por defecto; aprobar solo misión ret
 Comprobación HTTP del sitio local: Inicio, Sobre APAG y Servicios responden 200 con texto cargado, sin placeholder institucional; portada única y álbumes fuera de Inicio. Galería contiene las cuatro fotos nuevas. CMS real con ocho servicios, misión/visión sin aprobar y privacidad aún pendiente. No se envió correo externo.
 
 Sharp generó variantes WebP sin ampliar fotos pequeñas; srcset usa sus dimensiones reales. Los PNG originales se inspeccionaron. El navegador sigue sin estar disponible; no hubo screenshot ni revisión de composición, recortes y estados reales del panel. Hosting/Apache, TLS real y recepción de correo siguen pendientes.
+
+## Animación de Inicio — validación actual
+
+Build y check frontend aprobados: siete páginas, recursos, enlaces, anclajes, referencias ARIA, preloader y SEO. Revelado de contenido ampliado y caña SVG integrada únicamente en Inicio. Código revisado: preferencia de movimiento reducido, limpieza de animaciones/ScrollTriggers, cálculo responsive tras refresh y franja sin interacción recortada al margen. No se oculta contenido de lectura sin JavaScript.
+
+El navegador integrado reporta «No browser is available» y lista vacía. No se verificaron visualmente los tiempos, el recorrido real, móvil ni la interacción con rueda/táctil; esta limitación sigue abierta.
