@@ -18,6 +18,7 @@ function cms_public_directory(): string {
 }
 
 function cms_headers(): void {
+    header('Cache-Control: private, no-store, no-cache, max-age=0');
     header('X-Content-Type-Options: nosniff');
     header('Referrer-Policy: strict-origin-when-cross-origin');
     header('Permissions-Policy: camera=(), microphone=(), geolocation=()');
@@ -91,7 +92,6 @@ function cms_handle_request(): void {
             $html = preg_replace_callback('/\bsrcset="([^"]+)"/', fn($match) => 'srcset="' . str_replace('./', cms_escape($base . '/'), $match[1]) . '"', $html);
         }
         header('Content-Type: text/html; charset=utf-8');
-        header('Cache-Control: no-cache');
         if ($method !== 'HEAD') echo $html;
     } catch (Throwable $error) {
         error_log('APAG CMS: ' . $error->getMessage());

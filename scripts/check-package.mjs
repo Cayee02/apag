@@ -41,6 +41,8 @@ try {
   }
   assert(response, 'El servidor de prueba debe iniciar');
   assert.equal(response.status, 200, 'El paquete debe renderizar Inicio desde public_html');
+  assert.match(response.headers.get('cache-control'), /private/);
+  assert.match(response.headers.get('cache-control'), /no-store/);
   const html = await response.text();
   assert(html.includes('data-cms="home.title"'), 'Plantilla del CMS renderizada');
   assert(!html.includes('%APAG_'), 'Sin tokens sin resolver');

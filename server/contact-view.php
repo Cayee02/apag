@@ -51,7 +51,7 @@ function contact_page_html(array $content, ?array $response = null): string {
 }
 
 function contact_handle_request(bool $api): void {
-    header('Cache-Control: no-store');
+    header('Cache-Control: private, no-store, no-cache, max-age=0');
     if ($api) header('X-Robots-Tag: noindex, nofollow');
     $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
     if (!in_array($method, ['GET', 'POST', 'HEAD'], true)) {

@@ -93,7 +93,7 @@ Colores principales derivados de la identidad:
 Primera entrega: base Vite, CSS y JavaScript modulares, logo oficial suministrado, encabezado, menú móvil y portada de Inicio. Las páginas internas tienen una base navegable; el contenido institucional no recibido se identifica como pendiente.
 
 ```sh
-npm.cmd install
+composer install --no-dev --prefer-dist --no-interaction
 npm.cmd run dev
 ```
 

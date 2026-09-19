@@ -18,6 +18,6 @@ DirectoryIndex index.php
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   <FilesMatch "\.(?:html|php)$">
-    Header set Cache-Control "no-cache"
+    Header set Cache-Control "private, no-store, no-cache, max-age=0"
   </FilesMatch>
 </IfModule>

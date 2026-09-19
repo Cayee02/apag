@@ -167,6 +167,8 @@ Acceder a **https://apag-py.com/admin** después de SSL. Comprobar login, guarda
 
 ## 7. Configurar caché y reglas PHP en SiteGround
 
+Diagnóstico comprobado durante la publicación: si `/index.php` muestra imágenes `/media/` del panel pero `/index.html` conserva las imágenes iniciales y devuelve `Cache-Control: max-age=15552000`, el HTML está siendo servido por la capa estática. Desactivar NGINX Direct Delivery y vaciar las cachés con los pasos siguientes. El paquete actualizado incluye `private, no-store, no-cache, max-age=0` en las respuestas PHP y en las reglas para HTML/PHP; esto no sustituye desactivar la entrega directa que evita PHP. No sobrescribir el `storage/content.json` del servidor al aplicar esta corrección.
+
 **Este paso es obligatorio para comprobar que el panel realmente actualiza las páginas.** Las URLs `.html` deben pasar por `index.php`, aunque exista la plantilla compilada. El `.htaccess` incluido ya define esas reglas y el índice PHP.
 
 1. En **Speed > Caching > NGINX Direct Delivery**, desactivar esta opción para el sitio durante la instalación. SiteGround indica que entrega directamente documentos HTML estáticos. Para APAG, se infiere que esto puede evitar las reglas PHP del CMS; por eso se desactiva y se valida antes de optimizar. [SiteGround: NGINX Direct Delivery](https://www.siteground.com/tutorials/supercacher/nginx-direct-delivery/).

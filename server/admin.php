@@ -19,7 +19,7 @@ function cms_admin_redirect(string $section = 'home'): never {
 }
 
 function cms_admin_request(): void {
-    header('Cache-Control: no-store');
+    header('Cache-Control: private, no-store, no-cache, max-age=0');
     header('X-Robots-Tag: noindex, nofollow');
     header("Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'");
     header('X-Frame-Options: DENY');
