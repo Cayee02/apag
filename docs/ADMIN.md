@@ -50,6 +50,8 @@ npm.cmd run dev:php
 
 Web: http://127.0.0.1:8080/ · Panel: http://127.0.0.1:8080/admin
 
+En el paquete desplegado en SiteGround, la cuenta se crea con `php app/bin/create-admin.php` desde la raíz privada del sitio, enviándole el JSON por entrada estándar. `public_html` no contiene `package.json` ni `composer.json`; por tanto, no se ejecutan allí npm ni Composer. Los comandos seguros para SSH y el procedimiento de reemplazo de la única cuenta están documentados en `guia_deploy.md`, sección 6.
+
 `APAG_PHP_PORT` permite elegir otro puerto. El servidor escucha únicamente en loopback y es para desarrollo local. El comando compila el frontend primero. Tras modificar código del frontend, recompilar para actualizar lo que sirve PHP.
 
 El servidor Vite de `npm.cmd run dev` sigue siendo útil para diseño, pero no ejecuta PHP ni muestra las ediciones guardadas en el panel. Para probar autoadministración utiliza la URL PHP indicada arriba.

@@ -163,6 +163,23 @@ Elegir un usuario de 3–60 caracteres y contraseña de al menos 12 caracteres, 
 
 Si ese directorio local ya tiene una cuenta, el comando rechaza sobrescribirla. Utilizar `npm.cmd run admin:create -- --reset` en el mismo bloque solo si se quiere reemplazar esa cuenta de despliegue. No ejecutar resets por rutina.
 
+En una instalación ya copiada a SiteGround no existen `package.json` ni los scripts fuente, porque no son necesarios en producción. Para crear la única cuenta directamente por SSH, situarse en la raíz privada del sitio y ejecutar:
+
+```sh
+cd /home/customer/www/apag-py.com
+read -r -p "Usuario administrador: " U
+read -r -s -p "Contraseña (no se muestra): " P
+printf '\n'
+export U P
+php -r 'echo json_encode(["username"=>getenv("U"),"password"=>getenv("P")], JSON_THROW_ON_ERROR);' \
+| php app/bin/create-admin.php
+unset U P
+```
+
+La contraseña debe tener entre 12 caracteres y 72 bytes. El valor no queda en el historial del shell y el script guarda solamente su hash en `storage/admin.json`. Si responde `La cuenta ya existe`, no admite una segunda cuenta: iniciar sesión con la cuenta migrada o reemplazarla deliberadamente. Para reemplazarla, respaldar antes `storage/admin.json` y repetir el bloque cambiando el arreglo de la línea `php -r` a `["username"=>getenv("U"),"password"=>getenv("P"),"replace"=>true]`. Esto invalida la cuenta y las sesiones anteriores. La barra invertida al final de la línea mantiene unida la tubería: `php app/bin/create-admin.php` nunca debe ejecutarse solo, porque el archivo no es un ejecutable de Bash.
+
+No ejecutar `npm run admin:create` ni `composer install` dentro de `public_html`. El paquete ya contiene `app/vendor/`; comprobar `app/vendor/autoload.php`. Composer solo lee un `composer.json` desde el directorio de proyecto y no es parte del alta de la cuenta en el servidor compilado.
+
 Acceder a **https://apag-py.com/admin** después de SSL. Comprobar login, guardado y logout. Cambiar la contraseña desde **Mi cuenta** si hace falta. Guardar el acceso en un gestor de contraseñas; entregar a APAG su cuenta, sin compartir credenciales por chat o publicar archivos privados.
 
 ## 7. Configurar caché y reglas PHP en SiteGround

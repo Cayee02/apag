@@ -1,157 +1,232 @@
-# 🌾 APAG — Sitio Web Institucional
+# APAG — Sitio web institucional
 
-Sitio web institucional moderno para la:
+Sitio oficial de la **Asociación de Productores Agrícolas del Guairá (APAG)**, desarrollado por **Leo Systems**.
 
-# Asociación de Productores Agrícolas del Guairá — APAG
+El proyecto combina un frontend institucional compilado con Vite y un panel administrativo ligero en PHP. El panel permite actualizar el contenido sin modificar el diseño ni recompilar el sitio.
 
-Proyecto desarrollado por **Leo Systems**.
+## Estado actual
 
----
+Actualizado: **19 de septiembre de 2026**.
 
-# 1. Visión del proyecto
+- Dominio de producción: [apag-py.com](https://apag-py.com/).
+- Instalación preparada para SiteGround con `public_html`, `app` y `storage` separados.
+- Panel administrativo instalado en `/admin`.
+- Contenido local: revisión 26, privacidad, misión y visión aprobadas, tres álbumes y 21 archivos multimedia.
+- Teléfonos publicados: `+595 995 654544` y `+595 981 482592`.
+- Cuenta SMTP confirmada: `contactos@apag-py.com`, servidor `mail.apag-py.com`, puerto 465 y SMTPS.
+- Indexación desactivada durante la revisión final mediante `APAG_INDEXABLE=false`.
 
-El objetivo es desarrollar una experiencia web institucional moderna, rápida, elegante y visualmente diferenciada para APAG.
+La contraseña SMTP nunca forma parte del repositorio ni del paquete generado. Todavía debe comprobarse en producción la recepción real del formulario antes de considerarlo entregado.
 
-El sitio NO debe sentirse como una plantilla genérica de asociación.
+## Funcionalidades
 
-Queremos transmitir:
+- Inicio institucional con animaciones de scroll, preloader y fotografía principal estática.
+- Páginas de Servicios, Sobre APAG, Galería, Contacto y Privacidad.
+- Galerías y álbumes administrables con visor de fotografías.
+- Panel PHP para textos, servicios, imágenes, álbumes, contacto y aprobaciones institucionales.
+- Procesamiento de imágenes con variantes WebP.
+- Formulario de contacto con SMTP autenticado, CSRF, validación, honeypot, límites y control de duplicados.
+- Sitemap, robots, canonical, Open Graph y datos estructurados.
+- Navegación responsive, foco visible, movimiento reducido y comprobaciones estáticas de accesibilidad.
+- Mapa de la oficina integrado en la página de Contacto.
 
-- agricultura;
-- producción;
-- naturaleza;
-- crecimiento;
-- trabajo;
-- comunidad;
-- confianza;
-- desarrollo rural;
-- sostenibilidad;
-- futuro.
+## Stack
 
-La experiencia debe combinar una estética institucional con una presentación visual contemporánea.
+- HTML semántico, CSS modular y JavaScript ES Modules.
+- Vite 8 para desarrollo y compilación.
+- GSAP y Lenis para movimiento y desplazamiento.
+- Lucide para iconos y Fontsource para tipografías locales.
+- PHP 8.2 o superior, sin framework ni base de datos.
+- PHPMailer mediante Composer.
+- Archivos JSON privados para contenido, cuenta administrativa y revisiones.
 
-El usuario debe sentir desde los primeros segundos que APAG representa:
+## Requisitos locales
 
-> personas que trabajan la tierra, producen, crecen y construyen futuro.
+- Node.js 22.12 o superior.
+- npm.
+- PHP 8.2 o superior.
+- Extensiones PHP: GD con WebP, Fileinfo, Mbstring, Session y OpenSSL.
+- Composer.
 
----
+## Instalación local
 
-# 2. Referencia inicial
-
-Sitio compartido por el cliente:
-
-https://agricultoresbajocauca.com
-
-Debe utilizarse solamente como referencia de:
-
-- temática;
-- estructura institucional;
-- presentación de servicios;
-- información sobre la asociación;
-- contacto.
-
-NO copiar:
-
-- estructura visual;
-- diseño;
-- componentes;
-- textos;
-- colores;
-- animaciones;
-- layouts.
-
-La versión APAG debe superar ampliamente la referencia en:
-
-- diseño;
-- experiencia de usuario;
-- navegación;
-- velocidad;
-- animaciones;
-- responsive;
-- jerarquía visual;
-- accesibilidad;
-- interacción.
-
----
-
-# 3. Objetivo visual
-
-Crear una identidad digital inspirada en el logotipo de APAG.
-
-Colores principales derivados de la identidad:
-
-## Verde APAG
-
-```css
---apag-green-900: #075F36;
---apag-green-800: #08713F;
---apag-green-700: #168447;
---apag-green-500: #4D973D;
+```powershell
+npm.cmd ci
+composer install --no-dev --prefer-dist --no-interaction
+Copy-Item .env.example .env
 ```
 
-## Desarrollo iniciado
+Configurar `.env`:
 
-Primera entrega: base Vite, CSS y JavaScript modulares, logo oficial suministrado, encabezado, menú móvil y portada de Inicio. Las páginas internas tienen una base navegable; el contenido institucional no recibido se identifica como pendiente.
+```dotenv
+APAG_SITE_URL=https://apag-py.com/
+APAG_INDEXABLE=false
+```
 
-```sh
-composer install --no-dev --prefer-dist --no-interaction
+El entorno de Vite sirve solamente el frontend estático:
+
+```powershell
 npm.cmd run dev
 ```
 
-Abrir la URL indicada por Vite (normalmente http://127.0.0.1:5173).
+Para probar el sitio con el panel y el contenido PHP:
 
-```sh
-npm.cmd run build
-npm.cmd run check
-npm.cmd run preview
-```
-
-La compilación se genera en `dist/`. En shells donde npm no esté restringido puede usarse `npm` en lugar de `npm.cmd`.
-
-Estado y próximos pasos: [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md). Procedencia de imágenes: [docs/ASSETS.md](docs/ASSETS.md). No se considera una entrega final de producción; faltan contenido oficial, activación de correo/política, configuración de hosting y verificación visual.
-
-Roadmap actualizado por fase: [docs/ROADMAP_STATUS.md](docs/ROADMAP_STATUS.md). Configuración de dominio, indexación y metadatos: [docs/SEO.md](docs/SEO.md). La portada usa nuevamente una sola imagen, el atardecer original; la galería fotográfica se conserva.
-
-## Panel PHP integrado
-
-El gestor seleccionado es un panel ligero PHP: textos principales, fotos, servicios y contacto editables, con guardado inmediato sobre el diseño actual.
-
-```sh
+```powershell
 npm.cmd run admin:create
 npm.cmd run dev:php
 ```
 
-El primer comando activa tu cuenta solicitando usuario y contraseña sin mostrarla. El segundo compila y abre el servidor local: web http://127.0.0.1:8080/ y panel http://127.0.0.1:8080/admin. Vite en 5173 continúa siendo el entorno de diseño y no ejecuta el panel.
+- Web local: `http://127.0.0.1:8080/`
+- Panel local: `http://127.0.0.1:8080/admin`
 
-```sh
-npm.cmd run check:php
+`admin:create` solicita las credenciales sin mostrar la contraseña. El panel admite una sola cuenta administrativa. No existe un usuario ni contraseña predeterminados.
+
+## Comandos disponibles
+
+| Comando | Función |
+| --- | --- |
+| `npm.cmd run dev` | Inicia Vite para trabajo visual |
+| `npm.cmd run dev:php` | Compila y sirve el sitio PHP local |
+| `npm.cmd run build` | Genera el frontend en `dist/` |
+| `npm.cmd run build:php` | Genera el paquete de hosting en `dist-php/` |
+| `npm.cmd run admin:create` | Crea la cuenta administrativa local |
+| `npm.cmd run images:optimize` | Regenera variantes optimizadas |
+| `npm.cmd run check` | Comprueba frontend, SEO y accesibilidad estática |
+| `npm.cmd run check:php` | Comprueba panel, persistencia, seguridad e imágenes |
+| `npm.cmd run check:contact` | Comprueba formulario y SMTP local aislado |
+| `npm.cmd run check:package` | Comprueba la distribución final para PHP |
+
+Antes de publicar una nueva versión:
+
+```powershell
 npm.cmd run build:php
-```
-
-El paquete PHP queda en `dist-php/` con código privado y raíz pública separados. No incluye la cuenta, datos locales ni configuración privada SMTP. Requiere PHP 8.2+, GD/WebP, Fileinfo, Mbstring y sesiones; reglas de Apache incluidas, pendientes de validar en hosting. Guía de uso, respaldos y publicación: [docs/ADMIN.md](docs/ADMIN.md).
-
-## Formulario de contacto
-
-Formulario PHP con validación, antispam y PHPMailer para SMTP del hosting. Instalar las dependencias PHP antes de generar el paquete:
-
-```sh
-composer install --no-dev --prefer-dist --no-interaction
+npm.cmd run check
+npm.cmd run check:php
 npm.cmd run check:contact
+npm.cmd run check:package
 ```
 
-El envío real requiere configurar el correo del hosting y publicar la política aprobada desde el panel. La política sigue pendiente por decisión del usuario; las pruebas de envío usan SMTP local aislado y no envían correos a APAG. Instrucciones: [docs/CONTACT_FORM.md](docs/CONTACT_FORM.md).
+## Estructura principal
 
-## Contenido institucional y galería
+```text
+apag/
+├── public/                  # Imágenes y recursos públicos originales
+├── src/                     # CSS, JavaScript, datos y parciales
+├── server/                  # CMS, formulario, router y panel PHP
+├── storage/                 # Datos privados locales; no se empaquetan
+├── scripts/                 # Build, optimización y comprobaciones
+├── docs/                    # Documentación técnica y operativa
+├── dist/                    # Frontend compilado
+└── dist-php/                # Paquete preparado para SiteGround
+```
 
-El texto propuesto recibido se cargó en Inicio, Sobre APAG, Servicios y el panel, con ocho servicios y seis pilares. Misión/visión se muestran como propuestas y se aprueban por separado desde Sobre APAG. Fuente: `src/data/institutional.json`.
+El contenido de `storage/` incluye información persistente. No debe colocarse dentro de la raíz pública ni sobrescribirse durante una actualización rutinaria.
 
-La página `galeria.html`, accesible desde los menús, muestra álbumes administrables. Incluye cuatro fotos de maquinaria compartidas por el cliente y mejoradas con IA, optimizadas a WebP. El panel permite añadir más fotos y álbumes. Portada original y galería editorial de Inicio conservadas. Uso y carga inicial: [docs/ADMIN.md](docs/ADMIN.md).
+## Paquete de producción
 
-## Sitemap, robots y accesibilidad
+`npm.cmd run build:php` genera:
 
-El build genera `/sitemap.xml` y `/robots.txt`. Sin dominio configurado se usan URLs locales de prueba; definir `APAG_SITE_URL` antes de publicar y activar `APAG_INDEXABLE` tras aprobación. El check incluye etiquetas/alt/landmarks y contraste de texto/foco/bordes. Configuración, límites y revisión manual pendiente: [docs/SEO_ACCESSIBILITY.md](docs/SEO_ACCESSIBILITY.md).
+```text
+dist-php/
+├── public/      # Copiar su contenido a public_html/
+├── app/         # Código PHP privado y vendor/
+├── docs/
+└── guia_deploy.md
+```
 
-## Publicación en SiteGround
+La estructura esperada en SiteGround es:
 
-Dominio confirmado: `https://apag-py.com/`. Guía completa: [guia_deploy.md](guia_deploy.md), también incluida en el paquete PHP. El entry generado reconoce su carpeta pública aunque se instale como `public_html`; PHP/datos permanecen fuera de ella. `npm.cmd run check:package` prueba esa distribución con datos aislados. SMTP, cuenta del panel, política, DNS/SSL/caché y validación real siguen pendientes de configurar en hosting.
+```text
+/home/customer/www/apag-py.com/
+├── public_html/
+├── app/
+└── storage/
+```
 
-Auditoría antes de publicación y pendientes reales: [docs/PREDEPLOY_REVIEW.md](docs/PREDEPLOY_REVIEW.md). Privacidad/misión/visión ya aprobadas en CMS local y cuenta existente; necesitan migración al hosting. SMTP todavía sin configurar.
+`app` y `storage` son hermanos de `public_html`, no subcarpetas públicas. El paquete excluye deliberadamente:
+
+- `storage/admin.json`;
+- `storage/content.json` y fotografías cargadas desde el panel;
+- `app/config.local.php`;
+- contraseñas y otras credenciales.
+
+Estos elementos deben conservarse o migrarse por separado.
+
+## SMTP de producción
+
+Crear en el servidor el archivo privado:
+
+```text
+/home/customer/www/apag-py.com/app/config.local.php
+```
+
+Configuración confirmada:
+
+```php
+<?php
+return [
+    'smtp_host' => 'mail.apag-py.com',
+    'smtp_port' => 465,
+    'smtp_encryption' => 'ssl',
+    'smtp_username' => 'contactos@apag-py.com',
+    'smtp_password' => 'CONTRASEÑA_GUARDADA_SOLO_EN_EL_SERVIDOR',
+    'mail_from' => 'contactos@apag-py.com',
+    'mail_from_name' => 'APAG',
+    'mail_to' => 'contactos@apag-py.com',
+];
+```
+
+El correo del visitante se utiliza como `Reply-To`. IMAP 993 sirve para leer el buzón y no interviene en el formulario web.
+
+## Consideraciones de SiteGround
+
+Las URLs `.html` deben pasar por `public_html/index.php` para incorporar los cambios guardados por el panel. En SiteGround:
+
+1. Desactivar **NGINX Direct Delivery** para el dominio.
+2. Conservar las reglas incluidas en `public_html/.htaccess`.
+3. Vaciar **Dynamic Cache** después de modificar la configuración.
+4. Comprobar los cambios desde una ventana privada.
+
+Si `/index.php` muestra el contenido nuevo pero `/index.html` conserva una versión anterior, la capa estática está evitando el renderizado PHP.
+
+La cuenta administrativa de producción se crea directamente con `php app/bin/create-admin.php`; no se ejecutan npm ni Composer dentro de `public_html`. El procedimiento seguro está en la sección 6 de la guía de despliegue.
+
+## Indexación
+
+Durante la revisión se mantiene:
+
+```dotenv
+APAG_INDEXABLE=false
+```
+
+Cuando APAG apruebe la salida pública:
+
+1. Cambiar a `APAG_INDEXABLE=true` en el entorno local de build.
+2. Ejecutar nuevamente `npm.cmd run build:php` y las comprobaciones.
+3. Subir el paquete conservando `storage/` y `app/config.local.php`.
+4. Revisar `robots.txt`, `sitemap.xml` y canonical.
+5. Registrar el sitemap en Google Search Console.
+
+## Seguridad y respaldos
+
+- No guardar contraseñas en README, `.env` de Vite, HTML, Git o comandos visibles.
+- Mantener `app/` y `storage/` fuera de `public_html`.
+- Respaldar juntos `storage/content.json`, `storage/admin.json` y `storage/media/`.
+- Conservar `app/config.local.php` durante las actualizaciones.
+- No utilizar permisos `777`.
+- Antes de reemplazar una cuenta administrativa, respaldar `storage/admin.json`.
+
+## Documentación
+
+- [Guía completa de despliegue](guia_deploy.md)
+- [Administración del contenido](docs/ADMIN.md)
+- [Formulario y SMTP](docs/CONTACT_FORM.md)
+- [Estado del roadmap](docs/ROADMAP_STATUS.md)
+- [Revisión antes del despliegue](docs/PREDEPLOY_REVIEW.md)
+- [SEO y accesibilidad](docs/SEO_ACCESSIBILITY.md)
+- [Desarrollo y decisiones](docs/DEVELOPMENT.md)
+- [Procedencia de recursos visuales](docs/ASSETS.md)
+
+## Créditos
+
+Proyecto desarrollado por [Leo Systems](https://leo-systems-py.com/) para APAG.
