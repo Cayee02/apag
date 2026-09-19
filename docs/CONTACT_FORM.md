@@ -10,7 +10,7 @@ Los mensajes se envían con PHPMailer 7.1.1 por SMTP. El remitente es una direcc
 
 ## Estado de activación
 
-El usuario eligió **correo del hosting**. Auditoría del 18 de septiembre de 2026: **la política está aprobada/publicada en el CMS local**, pero SMTP sigue sin configurar y la API informa ready=false. Migrar el contenido guardado y configurar correo en SiteGround para habilitar envíos. Las pruebas no enviaron correo externo; teléfonos/correo directo siguen disponibles.
+El usuario eligió **correo del hosting**. El 19 de septiembre de 2026 confirmó la cuenta `contactos@apag-py.com`, servidor `mail.apag-py.com`, SMTP 465 con autenticación y SMTPS (`ssl`). **La política está aprobada/publicada en el CMS local**. Falta guardar la contraseña directamente en la configuración privada de producción y comprobar una entrega real. Las pruebas no enviaron correo externo; teléfonos/correo directo siguen disponibles.
 
 El destino inicial usa el correo institucional del panel: `asociacion.prod.agric.guaira@gmail.com`. Confirmarlo antes de producción. `mail_to` permite un destino fijo privado independiente del correo visible.
 

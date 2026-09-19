@@ -189,25 +189,25 @@ No añadir `AddHandler` para ejecutar todos los HTML como PHP: aquí PHP se ejec
 
 ### Correo del hosting
 
-1. Crear la cuenta elegida en **Email > Accounts**, por ejemplo `contacto@apag-py.com` si APAG aprueba ese nombre.
+1. La cuenta confirmada para el sitio es `contactos@apag-py.com`.
 2. En la cuenta, abrir **Actions > Mail Configuration > Manual Settings** y copiar el servidor SMTP exacto. La cuenta completa es el usuario; la documentación actual indica SMTP 465. Usar `ssl` en este proyecto para SMTPS. Si el panel indica 587/STARTTLS, utilizar `tls`. [SiteGround: configuración de correo](https://www.siteground.com/kb/how_to_configure_my_mail_client/).
 3. Crear **`app/config.local.php`** fuera de `public_html`, siguiendo este ejemplo y reemplazando los valores indicados:
 
 ```php
 <?php
 return [
-    'smtp_host' => 'REEMPLAZAR_CON_SERVIDOR_DE_MANUAL_SETTINGS',
+    'smtp_host' => 'mail.apag-py.com',
     'smtp_port' => 465,
     'smtp_encryption' => 'ssl',
-    'smtp_username' => 'contacto@apag-py.com',
+    'smtp_username' => 'contactos@apag-py.com',
     'smtp_password' => 'REEMPLAZAR_CON_CONTRASENA_DE_LA_CUENTA',
-    'mail_from' => 'contacto@apag-py.com',
+    'mail_from' => 'contactos@apag-py.com',
     'mail_from_name' => 'APAG',
-    'mail_to' => 'asociacion.prod.agric.guaira@gmail.com',
+    'mail_to' => 'contactos@apag-py.com',
 ];
 ```
 
-El ejemplo utiliza una cuenta propuesta, no una cuenta ya creada. Confirmar el destinatario con APAG. `mail_to` vacío usa el correo visible configurado en el panel. El remitente debe ser la cuenta autorizada del hosting; el correo del visitante se añade como Reply-To. Escribir una contraseña PHP correctamente escapada si contiene comillas o barras; no incluirla en HTML, `.env` de Vite, Git ni el paquete público. El build no incluye este archivo y las actualizaciones deben conservarlo.
+Estos valores corresponden a los ajustes manuales confirmados de la cuenta. `mail_to` determina dónde llegan las consultas; se configuró el mismo buzón `contactos@apag-py.com`. Puede sustituirse únicamente ese valor por otro destinatario autorizado si APAG lo decide. El remitente debe continuar siendo la cuenta del hosting; el correo del visitante se añade como Reply-To. Escribir una contraseña PHP correctamente escapada si contiene comillas o barras; no incluirla en HTML, `.env` de Vite, Git ni el paquete público. El build no incluye este archivo y las actualizaciones deben conservarlo. IMAP 993 se utiliza para leer el buzón desde un cliente de correo y no forma parte de la configuración del formulario.
 
 Revisar **Email > Authentication** y publicar/verificar SPF y DKIM en el proveedor DNS que sea realmente autoritativo. Usar los valores propios de la cuenta, sin duplicar registros SPF. Revisar DMARC con el responsable del correo y comprobar entrega antes de endurecer su política. [SiteGround: autenticación de correo](https://www.siteground.com/tutorials/email/authentication).
 
